@@ -1,0 +1,56 @@
+{
+    "title" : "Nacos 分析",
+    "author": "莴苣菜",
+    "description": "这是一本关于nacos源码分析的书， 本文从使用到源码解读，一步步去分析nacos设计者的思路",
+    "root": ".",
+    "plugins": [
+        "github",
+        "advanced-emoji",
+        "alerts",
+        "ancre-navigation",
+        "change_girls",
+        "code",
+        "custom-favicon",
+        "disqus",
+        "lightbox",
+        "-lunr",
+        "-search",
+        "search-pro"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/xyj0203"
+        },
+        "change_girls" : {
+            "time" : 10,
+            "urls" : [
+                "girlUrl1", "girlUrl2"
+            ]
+        },
+        "code": {
+            "copyButtons": false
+        },
+        "favicon": "path/to/favicon.ico",
+        "donate": {
+            "wechat": "https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg",
+            "alipay": "https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg",
+            "title": "鼓励一下",
+            "button": "赏",
+            "alipayText": "支付宝打赏",
+            "wechatText": "微信打赏"
+          },
+        "disqus": {
+            "shortName": "comment-sxqwxkhzpy"
+        }
+    },
+    "pdf":{
+        "fontSize" : 16,
+        "margin" : {
+            "top" : 0,
+            "bottom" : 0,
+            "right" : 0,
+            "left" : 0
+        },
+        "fontFamily": "SimSun"
+    }
+}
