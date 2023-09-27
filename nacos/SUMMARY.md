@@ -6,7 +6,7 @@
   - [1.2 nacos的功能和生态](Chapter1/Chapter1.2.md)
   - [1.3 nacos专业名词](Chapter1/Chapter1.3.md)
   - [1.4 nacos架构](Chapter1/Chapter1.4.md)
-  - 1.5 nacos的安装启动
+  - [1.5 nacos的安装启动](Chapter1/Chapter1.5.md)
   - 1.6 nacos的配置解析
   
 
