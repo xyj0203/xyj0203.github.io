@@ -2,13 +2,13 @@
 
 假如我们来假设这样一个场景，我们需要部署一个集群，这样的话如果是在我们自己测试的环境还好说，通过暴力进行解决，或者说也可以通过写一个shell脚本进行，但是如果说是在不同的主机上，这样就会变得很麻烦，于是乎就有了[Docker](https://zh.wikipedia.org/wiki/Docker),[k8s](https://zh.wikipedia.org/wiki/Kubernetes)等一系列的实现方案，我们可以在虚拟的容器内进行部署，然后也可以动态的进行上线下线的控制。对于Docker的学习还是有一定的必要的，之后可以了解一下这里只是简单的介绍一下之后的软件安装模式。
 
-# 1.5Nacos的安装和启动
+# 1.5 Nacos的安装和启动
 
 我们这部分还是根据Nacos的官网来进行，有什么需要注意的细节我会一一的点明。
 
 因为Nacos是基于JAVA实现的，所以最基础的要JAVA的环境，这一点是必不可少的，一下的安装都基于Linux完成，原因的话可以下去自己去了解。
 
-## 1.5.1单机部署启动
+## 1.5.1 单机部署启动
 
 我们就从最基础的开始安装，只演示一次，之后我们会只使用docker安装。因为学到这里就已经默认已经具备独立安装JDK的条件了，我们主要来进行安装Nacos。
 
@@ -295,4 +295,51 @@ sh startup.sh -m standalone
 ![](../images/20230927185131.png)
 
 此时我们可以先自己进行稍微体验一下，再然后我们将开始docker部署。
+
+## 1.5.2 docker部署启动
+
+如果你学习过docker的话就会大概知道我们要安装一个应用的话需要先下载镜像，然后通过镜像来进行容器的获取。[dockerhub](https://hub.docker.com/)是一个可以下载镜像的网站，当然国内也有自己的镜像，你也可以选择自己搭一个镜像托管的网站或是自己写一个镜像(不推荐，毕竟前人已经实现了)，由于官网经常不能用，所以我们采用代理的方式来解决，
+
+[dockerproxy](https://dockerproxy.com/),目前来说做的最好的集成代理。
+
+当然国内也有响应的镜像，[阿里云](https://promotion.aliyun.com/ntms/act/kubernetes.html)、[网易云](https://c.163yun.com/hub#/home)，我们先要进行搜索nacos的镜像，然后安装。
+
+我们首先进入dockerhub的官方网站，然后去搜索我们要的镜像，一般来说，对于开源的软件都有已经构建好的镜像，我们不需要自己再去构建。
+
+![](../images/20230928092436.png)
+
+然后我们来搜索nacos
+
+![](../images/20230928092606.png)
+
+第一个就是我们需要的应用软件。
+
+![](../images/20230928092829.png)我们先去Tags中找到我们需要的版本往下看文档我们就会看到对应的启动命令，这里还是推荐先去大概的了解docker再来进行下面的安装步骤。
+
+```bash
+# 拉取镜像命令
+docker pull nacos/nacos-server:v2.2.3
+
+# 启动命令,因为在2.x版本后开启了grpc，所以我们还要开启9849端口
+#1、不配置数据库的启动
+docker run --name nacos-test1 -e MODE=standalone -p 8848:8848 -d nacos/nacos-server:v2.2.3
+#2、配置数据库
+docker run \
+--name nacos-test2 \
+-e MODE=standalone \
+-e SPRING_DATASOURCE_PLATFORM=mysql \
+-e MYSQL_SERVICE_HOST=10.102.46.60 \
+-e MYSQL_SERVICE_DB_NAME=nacos \
+-e MYSQL_SERVICE_USER=root \
+-e MYSQL_SERVICE_PASSWORD=123456 \
+-p 8848:8848 \
+-p 9848:9848 \
+-d nacos/nacos-server:v2.2.3
+```
+
+![](../images/20230928093735.png)
+
+我们可以根据文档的下面的参数表格来书写我们想要的配置项，也可以执行docker命令进入容器内部进行修改，我比较推荐前者。
+
+还有更方便的安装方式docker-compose,这里就不进行过多的阐述，读者可以下去自行了解，总的来说docker的功能十分强大，它还支持内部的分配ip和网段进行网络的划分，有必要去好好的学习一下，这里我推荐一下自己的入门书籍[《Docker 一从入门到实践》](https://yeasy.gitbook.io/docker_practice/)，今天的介绍就到此为止。
 
