@@ -7,14 +7,13 @@
   - [1.3 nacos专业名词](Chapter1/Chapter1.3.md)
   - [1.4 nacos架构](Chapter1/Chapter1.4.md)
   - [1.5 nacos的安装启动](Chapter1/Chapter1.5.md)
-  - 1.6 nacos的配置解析
   
 
 
 - 第二章 实践
 
-  - 2.1 NacosClient
-  - 2.2 Nacos集成Spring
+  - [2.1 NacosClient](Chapter2/Chapter2.1.md)
+  - [2.2 Nacos集成Spring](Chapter2/Chapter2.2.md)
   - 2.3 Nacos集成SpringBoot
   - 2.4 Nacos集成SpringCloud
   - 2.5 Nacos集成Docker
