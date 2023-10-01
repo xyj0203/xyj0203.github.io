@@ -323,15 +323,17 @@ docker pull nacos/nacos-server:v2.2.3
 # 启动命令,因为在2.x版本后开启了grpc，所以我们还要开启9849端口
 #1、不配置数据库的启动
 docker run --name nacos-test1 -e MODE=standalone -p 8848:8848 -d nacos/nacos-server:v2.2.3
+# 注意要运行sql文件，没有sql数据库会报错
 #2、配置数据库
 docker run \
 --name nacos-test2 \
 -e MODE=standalone \
 -e SPRING_DATASOURCE_PLATFORM=mysql \
--e MYSQL_SERVICE_HOST=10.102.46.60 \
+-e MYSQL_SERVICE_HOST=10\.102\.46\.60 \
 -e MYSQL_SERVICE_DB_NAME=nacos \
 -e MYSQL_SERVICE_USER=root \
 -e MYSQL_SERVICE_PASSWORD=123456 \
+-e MYSQL_SERVICE_DB_PARAM=characterEncoding=utf8\&connectTimeout=1000\&socketTimeout=3000\&autoReconnect=true\&useSSL=false \
 -p 8848:8848 \
 -p 9848:9848 \
 -d nacos/nacos-server:v2.2.3

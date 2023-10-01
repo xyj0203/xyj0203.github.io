@@ -419,7 +419,107 @@ docker run -p 6379:6379  --name some-redis -d redis
 
 而多数据源正式通过注解实现的**@NacosPropertySources**，这个注解里面可以存放来自不同数据源的配置信息，之后如果使用nacos的时候可能会很常用到。对于一些比较雷同的配置就不去做过多的解释了，如果有不懂的话可以在评论区进行留言，看到的话会进行回复。
 
+## 2.2.5nacos在POJO对象属性生效
 
+接下来我们要看的项目是nacos-spring-config-pojo-example这个小实例，这个实例讲述的是nacos如何在pojo对象实例上生效，进而做到实时的更新pojo实例对象属性。
+
+这个项目的配置和前几个无异因为都是Spring项目，我们着重来看配置类PromotionConfiguration，这个类是配置类声明了一个Bean对象交由Spring管理。
+
+```java
+@Configuration
+@EnableNacosConfig(globalProperties = @NacosProperties(serverAddr = "192.168.150.101:8848"))
+public class PromotionConfiguration {
+
+    @Bean
+    public Promotion promotion() {
+        return new Promotion();
+    }
+
+}
+```
+
+Promotion对象则是被加上了nacos的注解@NacosConfigurationProperties、@NacosProperty(value = "desc")
+
+、@NacosIgnore。这三个注解。
+
+第一个注解则是声明nacos配置的数据源和分组Id，第二个注解是为属性绑定实例的属性，可以起别名，第三个注解则是进行忽略这个POJO属性，忽略从 NacosConfigurationProperties 来的属性对象。
+
+```java
+@NacosConfigurationProperties(dataId = "promotion.properties", groupId = "spring-example", autoRefreshed = true)
+public class Promotion {
+
+    private long sku;
+
+    private double price;
+
+    private int amount;
+
+    @NacosProperty(value = "desc")
+    private String description;
+
+    @NacosIgnore
+    private int sold;
+}
+
+```
+
+我们来在控制台添加对应的pojo属性，然后启动看是否符合我们自己的预期。
+
+![](../images/20230930102340.png)
+
+请注意一点，因为对于有的属性我们已经起了别名，那么对于之前的那个名称就会失效，所以一定要保证属性照应，而且因为加上了自动刷新的注解，所以对于属性的更新也是会更新的。
+
+![](../images/20230930102556.png)
+
+这样的话对于属性上的注解我们也进行了大概的演示。
+
+## 2.2.6spring注册服务到nacos
+
+通过前面的几个应用，我们大概了解了属性配置的一些内容，接下来我们将了解spring的应用获取注册到nacos中的服务，算是服务发现模块的，应用的名称是nacos-spring-discovery-example，基本的配置合并前几节无异，我们也是直接来看如何实现的。
+
+首先就是NacosConfiguration这个类，配置了一定的属性注解。
+
+```java
+@Configuration
+// 和上面不同这个是开启了服务发现。
+@EnableNacosDiscovery(globalProperties = @NacosProperties(serverAddr = "192.168.150.101:8848"))
+public class NacosConfiguration {
+
+}
+```
+
+然后便是DiscoveryController,控制器获取所有的服务属性。
+
+```java
+@Controller
+@RequestMapping("discovery")
+public class DiscoveryController {
+	
+    // 注入nacos独有的服务
+    @NacosInjected
+    private NamingService namingService;
+
+    @RequestMapping(value = "/get", method = GET)
+    @ResponseBody
+    public List<Instance> get(@RequestParam String serviceName) throws NacosException {
+        return namingService.getAllInstances(serviceName);
+    }
+}
+```
+
+然后我们来进行启动查看。
+
+![](../images/20230930103530.png)
+
+可以看到无服务，然后我们来注册一个，再来观察。
+
+这里暂时有点问题，使用client时可以正常获取使用nacos的Spring注入时就无法获取，可能是因为版本不对应的问题，之后我再尝试下。
+
+由此我们就将nacos和Spring的集成大概算是学习完毕了，之后我们将开启新的篇章。
+
+## 2.2.7总结
+
+这一章大概是结束了，体验了nacos的核心特性，使用了注册配置和注册服务，总的来说配置的东西挺多的，再下来的集成项目中，需要我们配置的东西会逐渐变少，加油。
 
 
 

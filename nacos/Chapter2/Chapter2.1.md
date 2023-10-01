@@ -2,6 +2,8 @@
 
 我们的开发环境选择的IDEA，采用的nacos的版本为v2.2.3，因为我是根据nacos的官网开始的，所以我们可以跟随官网的例子，将步骤走一下，来领略下nacos的强大，以下的学习我们来通过[nacos-example](https://github.com/nacos-group/nacos-examples)来进行学习和体验。
 
+**注意JAVA的版本最好使用1.8，不然可能会出现一系列的错误。**
+
 # 2.1 NacosClient
 
 首先是我们需要引入nacos-client，这个是客户端SDK，我们需要导入maven坐标，我们采用JUNIT4来进行测试功能。
