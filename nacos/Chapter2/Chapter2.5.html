@@ -1,0 +1,607 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.5Nacos集成dubbo · Nacos 分析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莴苣菜">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter2.6.html" />
+    
+    
+    <link rel="prev" href="Chapter2.4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Chapter1.1.html">
+            
+                <a href="../Chapter1/Chapter1.1.html">
+            
+                    
+                    1.1 什么是nacos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/Chapter1.2.html">
+            
+                <a href="../Chapter1/Chapter1.2.html">
+            
+                    
+                    1.2 nacos的功能和生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/Chapter1.3.html">
+            
+                <a href="../Chapter1/Chapter1.3.html">
+            
+                    
+                    1.3 nacos专业名词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/Chapter1.4.html">
+            
+                <a href="../Chapter1/Chapter1.4.html">
+            
+                    
+                    1.4 nacos架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/Chapter1.5.html">
+            
+                <a href="../Chapter1/Chapter1.5.html">
+            
+                    
+                    1.5 nacos的安装启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    第二章 实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Chapter2.1.html">
+            
+                <a href="Chapter2.1.html">
+            
+                    
+                    2.1 NacosClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Chapter2.2.html">
+            
+                <a href="Chapter2.2.html">
+            
+                    
+                    2.2 Nacos集成Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Chapter2.3.html">
+            
+                <a href="Chapter2.3.html">
+            
+                    
+                    2.3 Nacos集成SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Chapter2.4.html">
+            
+                <a href="Chapter2.4.html">
+            
+                    
+                    2.4 Nacos集成SpringCloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.5" data-path="Chapter2.5.html">
+            
+                <a href="Chapter2.5.html">
+            
+                    
+                    2.5Nacos集成dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="Chapter2.6.html">
+            
+                <a href="Chapter2.6.html">
+            
+                    
+                    2.6 技术探讨OR学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    第三章 源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Chapter3/Chapter3.1.html">
+            
+                <a href="../Chapter3/Chapter3.1.html">
+            
+                    
+                    3.1核心特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    第四章 总结期许
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    第五章 技术畅想
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.5Nacos集成dubbo</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#25-nacos&#x96C6;&#x6210;dubbo"><b></b>2.5 Nacos&#x96C6;&#x6210;dubbo</a></li></ul></div><a href="#25-nacos&#x96C6;&#x6210;dubbo" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="25-nacos&#x96C6;&#x6210;dubbo"><a name="25-nacos&#x96C6;&#x6210;dubbo" class="anchor-navigation-ex-anchor" href="#25-nacos&#x96C6;&#x6210;dubbo"><i class="fa fa-link" aria-hidden="true"></i></a>2.5 Nacos&#x96C6;&#x6210;dubbo</h1>
+<p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x5B66;&#x4E60;&#x6211;&#x4EEC;&#x5927;&#x6982;&#x4E86;&#x89E3;&#x4E86;nacos&#x7684;&#x4E24;&#x5927;&#x529F;&#x80FD;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x770B;&#x4E00;&#x4E0B;nacos&#x548C;
+dubbo&#x7684;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x662F;nacos-dubbo-example&#x3002;&#x4F17;&#x6240;&#x5468;&#x77E5;&#xFF0C;dubbo&#x662F;&#x8FDC;&#x7A0B;&#x529F;&#x80FD;&#x8C03;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x5C31;&#x4F1A;&#x6D89;&#x53CA;&#x4E09;&#x4E2A;&#x6982;&#x5FF5;&#xFF0C;<strong>&#x8C03;&#x7528;&#x65B9;</strong>&#xFF0C;<strong>&#x63D0;&#x4F9B;&#x65B9;</strong>&#x548C;<strong>&#x63A5;&#x53E3;</strong></p>
+<p>&#x9996;&#x5148;&#x662F;&#x8C03;&#x7528;&#x65B9;,&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x6D88;&#x8D39;&#x8005;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x5F00;&#x542F;dubbo</span>
+<span class="hljs-meta">@EnableDubbo</span>
+<span class="hljs-comment">// &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;</span>
+<span class="hljs-meta">@PropertySource</span>(value = <span class="hljs-string">&quot;classpath:/consumer-config.properties&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoServiceConsumerBootstrap</span> </span>{
+
+    <span class="hljs-comment">// &#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x7684;&#x6CE8;&#x5165;</span>
+    <span class="hljs-meta">@DubboReference</span>(version = <span class="hljs-string">&quot;${demo.service.version}&quot;</span>)
+    <span class="hljs-keyword">private</span> DemoService demoService;
+
+    <span class="hljs-comment">// &#x7B49;&#x5F85;&#x6CE8;&#x5165;&#x540E;&#x7684;&#x8C03;&#x7528;</span>
+    <span class="hljs-meta">@PostConstruct</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+            System.out.println(demoService.sayName(<span class="hljs-string">&quot;Nacos&quot;</span>));
+        }
+    }
+
+    <span class="hljs-comment">// &#x4E3B;&#x7A0B;&#x5E8F;&#xFF0C;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x4E0A;&#x4E0B;&#x6587;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        AnnotationConfigApplicationContext context = <span class="hljs-keyword">new</span> AnnotationConfigApplicationContext();
+        <span class="hljs-comment">// &#x542F;&#x52A8;&#x7C7B;</span>
+        context.register(DemoServiceConsumerBootstrap.class);
+        <span class="hljs-comment">// &#x5237;&#x65B0;&#x4E0A;&#x4E0B;&#x6587;&#x5BB9;&#x5668;</span>
+        context.refresh();
+        context.close();
+    }
+}
+</code></pre>
+<p>&#x5BF9;&#x5E94;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-properties">## Dubbo Application info
+dubbo.application.name = dubbo-consumer-demo
+
+## Nacos registry address
+dubbo.registry.address = nacos://192.168.150.101:8848
+#dubbo.registry.address = nacos://127.0.0.1:8848?namespace=5cbb70a5-xxx-xxx-xxx-d43479ae0932
+#dubbo.registry.parameters.namespace=5cbb70a5-xxx-xxx-xxx-d43479ae0932
+
+# @Reference version
+demo.service.version= 1.0.0
+
+dubbo.application.qosEnable=false
+</code></pre>
+<p>&#x751F;&#x4EA7;&#x8005;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x5F00;&#x542F;dubbo</span>
+<span class="hljs-meta">@EnableDubbo</span>(scanBasePackages = <span class="hljs-string">&quot;com.alibaba.nacos.example.dubbo.service&quot;</span>)
+<span class="hljs-comment">// &#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+<span class="hljs-meta">@PropertySource</span>(value = <span class="hljs-string">&quot;classpath:/provider-config.properties&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DemoServiceProviderBootstrap</span> </span>{
+    <span class="hljs-comment">// &#x4E3B;&#x7A0B;&#x5E8F;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        AnnotationConfigApplicationContext context = <span class="hljs-keyword">new</span> AnnotationConfigApplicationContext();
+        context.register(DemoServiceProviderBootstrap.class);
+        context.refresh();
+        System.out.println(<span class="hljs-string">&quot;DemoService provider is starting...&quot;</span>);
+        System.in.read();
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C31;&#x662F;&#x63A5;&#x53E3;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DemoService</span> </span>{
+    <span class="hljs-function">String <span class="hljs-title">sayName</span><span class="hljs-params">(String name)</span></span>;
+}
+</code></pre>
+<p>&#x57FA;&#x672C;&#x4E0A;&#x662F;&#x8FD9;&#x6837;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x53EA;&#x62E5;&#x6709;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x63D0;&#x4F9B;&#x65B9;&#x62E5;&#x6709;&#x63A5;&#x53E3;&#x548C;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4E24;&#x8005;&#x901A;&#x8FC7;dubbo&#x8FDB;&#x884C;&#x8C03;&#x7528;&#xFF0C;&#x800C;nacos&#x5219;&#x662F;&#x8D77;&#x4E00;&#x4E2A;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x8C03;&#x7528;&#x65B9;&#x9700;&#x8981;&#x6839;&#x636E;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x7684;&#x5185;&#x5BB9;&#x53BB;&#x5BFB;&#x627E;&#x5230;&#x5177;&#x4F53;&#x7684;&#x8C03;&#x7528;&#x5B9E;&#x73B0;&#xFF0C;dubbo&#x7684;&#x9ED8;&#x8BA4;&#x7684;&#x6CE8;&#x518C;&#x4E2D;&#x5FC3;&#x5C31;&#x662F;nacos&#x3002;</p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6765;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x786E;&#x5B9E;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#x3002;</p>
+<p><a href="../images/20230930152459.png" data-lightbox="8157d762-3c30-4e02-a634-5542a8da1ba0" data-title=""><img src="../images/20230930152459.png" alt=""></a></p>
+<p>&#x800C;nacos&#x4E0A;&#x4E5F;&#x6709;&#x4E86;&#x63D0;&#x4F9B;&#x65B9;&#x7684;&#x4FE1;&#x606F;</p>
+<p><a href="../images/20230930152602.png" data-lightbox="ac136ffc-689c-4eb0-810e-3931ca1ef01a" data-title=""><img src="../images/20230930152602.png" alt=""></a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter2.4.html" class="navigation navigation-prev " aria-label="Previous page: 2.4 Nacos集成SpringCloud">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter2.6.html" class="navigation navigation-next " aria-label="Next page: 2.6 技术探讨OR学习总结">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.5Nacos集成dubbo","level":"2.1.5","depth":2,"next":{"title":"2.6 技术探讨OR学习总结","level":"2.1.6","depth":2,"path":"Chapter2/Chapter2.6.md","ref":"Chapter2/Chapter2.6.md","articles":[]},"previous":{"title":"2.4 Nacos集成SpringCloud","level":"2.1.4","depth":2,"path":"Chapter2/Chapter2.4.md","ref":"Chapter2/Chapter2.4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","lightbox","-lunr","-search","search-pro","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"livereload":{},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"search-pro":{},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nacos 分析","gitbook":"*","description":"这是一本关于nacos源码分析的书， 本文从使用到源码解读，一步步去分析nacos设计者的思路"},"file":{"path":"Chapter2/Chapter2.5.md","mtime":"2023-09-30T07:54:34.725Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-01T04:09:36.360Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
