@@ -24,5 +24,6 @@
 - 第三章 源码解析
 
   - [3.1核心特性](Chapter3/Chapter3.1.md)
+  - [3.2测试](Chapter3/Chapter3.2.md)
 - 第四章 总结期许
 - 第五章 技术畅想
