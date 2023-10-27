@@ -1,0 +1,607 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>知识储备 · SpringAOP解析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莴苣菜">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Spring AOP 总览
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="1.1.html">
+            
+                <a href="1.1.html">
+            
+                    
+                    知识储备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    AOP引入：OOP存在的局限性
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    AOP使用场景
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    AOP概念：Aspect、Join Point和Advice等术语理解
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    Java AOP 设计模式：代理、判断和拦截器模式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    Java AOP 代理模式（Proxy）: Java静态代理和动态代理的区别是什么
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    Java AOP 判断模式（Predicate）: 如何筛选Join Point
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" >
+            
+                <span>
+            
+                    
+                    Java AOP 拦截器模式（Interceptor）: 拦截执行分别代表什么
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" >
+            
+                <span>
+            
+                    
+                    Spring AOP 功能概述：核心特性、编程模型和使用限制
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" >
+            
+                <span>
+            
+                    
+                    Spring AOP 编程模型：注解驱动、XML配置驱动和底层API
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" >
+            
+                <span>
+            
+                    
+                    Spring AOP 设计目标：Spring AOP 与 AOP框架之间的关系是竞争还是互补
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" >
+            
+                <span>
+            
+                    
+                    Spring AOP Advice类型:Spring AOP丰富了哪些AOP Advice 呢?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" >
+            
+                <span>
+            
+                    
+                    Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" >
+            
+                <span>
+            
+                    
+                    JDK动态代理:为什么Proxy.newProxyInstance会生成新的字节码?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" >
+            
+                <span>
+            
+                    
+                    CGLIB动态代理:为什么Java动态代理无法满定AOP的需要?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.16" >
+            
+                <span>
+            
+                    
+                    AspectJ 代理︰为什么Spring推荐AspectJ注解?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.17" >
+            
+                <span>
+            
+                    
+                    AspectJ基础: Aspect、Join Points、Pointcuts和Advice语法和特性
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.18" >
+            
+                <span>
+            
+                    
+                    AspectJ注解驱动:注解能完全替代AspectJ语言吗?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.19" >
+            
+                <span>
+            
+                    
+                    面试
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Spring AOP 基础
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Spring AOP API 设计与实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Spring对设计模式的应用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    综合运用章节
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >知识储备</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x7840;"><b></b>&#x57FA;&#x7840;</a></li></ul></div><a href="#&#x57FA;&#x7840;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x57FA;&#x7840;"><a name="&#x57FA;&#x7840;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x7840;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x7840;</h1>
+<ul>
+<li><p>Java &#x57FA;&#x7840;</p>
+<ul>
+<li>Java ClassLoading</li>
+<li>Java &#x52A8;&#x6001;&#x4EE3;&#x7406;</li>
+<li>Java &#x53CD;&#x5C04;</li>
+<li>&#x5B57;&#x8282;&#x7801;&#x6846;&#x67B6;&#xFF1A;ASM&#x3001;CGLIB</li>
+</ul>
+</li>
+<li><p>OOP &#x6982;&#x5FF5;</p>
+<ul>
+<li>&#x5C01;&#x88C5;</li>
+<li>&#x7EE7;&#x627F;</li>
+<li>&#x591A;&#x6001;</li>
+</ul>
+</li>
+<li><p>GoF23 &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;</p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x6A21;&#x5F0F;&#xFF08;Creational patterns&#xFF09;<ul>
+<li>&#x62BD;&#x8C61;&#x5DE5;&#x7A0B;&#x6A21;&#x5F0F;&#xFF08;Abstract factory&#xFF09;</li>
+<li>&#x6784;&#x5EFA;&#x5668;&#x6A21;&#x5F0F;&#xFF08;Builder&#xFF09;</li>
+<li>&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF08;Factory method&#xFF09;</li>
+<li>&#x539F;&#x578B;&#x6A21;&#x5F0F;&#xFF08;Prototype&#xFF09;</li>
+<li>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#xFF08;Singleton&#xFF09;</li>
+</ul>
+</li>
+<li>&#x7ED3;&#x6784;&#x6A21;&#x5F0F;&#xFF08;Structural patterns&#xFF09;<ul>
+<li>&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;&#xFF08;Adapter&#xFF09;</li>
+<li>&#x6865;&#x63A5;&#x6A21;&#x5F0F;&#xFF08;Bridge&#xFF09;</li>
+<li>&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#xFF08;Composite&#xFF09;</li>
+<li>&#x88C5;&#x9970;&#x5668;&#x6A21;&#x5F0F;&#xFF08;Decorator&#xFF09;</li>
+<li>&#x95E8;&#x9762;&#x6A21;&#x5F0F;&#xFF08;Facade&#xFF09;</li>
+<li>&#x4EAB;&#x5143;&#x6A21;&#x5F0F;&#xFF08;Flyweight&#xFF09;</li>
+<li>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#xFF08;Proxy&#xFF09;</li>
+</ul>
+</li>
+<li>&#x884C;&#x4E3A;&#x6A21;&#x5F0F;&#xFF08;Behavioral patterns&#xFF09;<ul>
+<li>&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#xFF08;Template Method&#xFF09;</li>
+<li>&#x4E2D;&#x7EE7;&#x5668;&#x6A21;&#x5F0F;&#xFF08;Mediator&#xFF09;</li>
+<li>&#x8D23;&#x4EFB;&#x94FE;&#x6A21;&#x5F0F;&#xFF08;Chain of Responsibility&#xFF09;</li>
+<li>&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#xFF08;Observer&#xFF09;</li>
+<li>&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#xFF08;Strategy&#xFF09;</li>
+<li>&#x547D;&#x4EE4;&#x6A21;&#x5F0F;&#xFF08;Command&#xFF09;</li>
+<li>&#x72B6;&#x6001;&#x6A21;&#x5F0F;&#xFF08;State&#xFF09;</li>
+<li>&#x8BBF;&#x95EE;&#x8005;&#x6A21;&#x5F0F;&#xFF08;Visitor&#xFF09;</li>
+<li>&#x89E3;&#x91CA;&#x5668;&#x6A21;&#x5F0F;&#xFF08;Interpreter&#xFF09;</li>
+<li>&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;&#xFF08;Iterator&#xFF09;</li>
+<li>&#x5907;&#x5FD8;&#x5F55;&#x6A21;&#x5F0F;&#xFF08;Memento&#xFF09;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Spring &#x6838;&#x5FC3;&#x57FA;&#x7840;</p>
+<ul>
+<li>Spring IOC&#x5BB9;&#x5668;</li>
+<li>Spring Bean&#x751F;&#x547D;&#x5468;&#x671F;&#xFF08;Bean Lifecycle&#xFF09;</li>
+<li>Spring &#x914D;&#x7F6E;&#x5143;&#x4FE1;&#x606F;&#xFF08;Configuration Metadata&#xFF09;</li>
+<li>Spring&#x4E8B;&#x4EF6;&#xFF08;Events&#xFF09;</li>
+<li>Spring&#x6CE8;&#x89E3;&#xFF08;Annotations&#xFF09;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"知识储备","level":"1.2.1","depth":2,"next":{"title":"AOP引入：OOP存在的局限性","level":"1.2.2","depth":2,"ref":"","articles":[]},"previous":{"title":"Spring AOP 总览","level":"1.2","depth":1,"ref":"","articles":[{"title":"知识储备","level":"1.2.1","depth":2,"path":"Chapter1/1.1.md","ref":"Chapter1/1.1.md","articles":[]},{"title":"AOP引入：OOP存在的局限性","level":"1.2.2","depth":2,"ref":"","articles":[]},{"title":"AOP使用场景","level":"1.2.3","depth":2,"ref":"","articles":[]},{"title":"AOP概念：Aspect、Join Point和Advice等术语理解","level":"1.2.4","depth":2,"ref":"","articles":[]},{"title":"Java AOP 设计模式：代理、判断和拦截器模式","level":"1.2.5","depth":2,"ref":"","articles":[]},{"title":"Java AOP 代理模式（Proxy）: Java静态代理和动态代理的区别是什么","level":"1.2.6","depth":2,"ref":"","articles":[]},{"title":"Java AOP 判断模式（Predicate）: 如何筛选Join Point","level":"1.2.7","depth":2,"ref":"","articles":[]},{"title":"Java AOP 拦截器模式（Interceptor）: 拦截执行分别代表什么","level":"1.2.8","depth":2,"ref":"","articles":[]},{"title":"Spring AOP 功能概述：核心特性、编程模型和使用限制","level":"1.2.9","depth":2,"ref":"","articles":[]},{"title":"Spring AOP 编程模型：注解驱动、XML配置驱动和底层API","level":"1.2.10","depth":2,"ref":"","articles":[]},{"title":"Spring AOP 设计目标：Spring AOP 与 AOP框架之间的关系是竞争还是互补","level":"1.2.11","depth":2,"ref":"","articles":[]},{"title":"Spring AOP Advice类型:Spring AOP丰富了哪些AOP Advice 呢?","level":"1.2.12","depth":2,"ref":"","articles":[]},{"title":"Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现?","level":"1.2.13","depth":2,"ref":"","articles":[]},{"title":"JDK动态代理:为什么Proxy.newProxyInstance会生成新的字节码?","level":"1.2.14","depth":2,"ref":"","articles":[]},{"title":"CGLIB动态代理:为什么Java动态代理无法满定AOP的需要?","level":"1.2.15","depth":2,"ref":"","articles":[]},{"title":"AspectJ 代理︰为什么Spring推荐AspectJ注解?","level":"1.2.16","depth":2,"ref":"","articles":[]},{"title":"AspectJ基础: Aspect、Join Points、Pointcuts和Advice语法和特性","level":"1.2.17","depth":2,"ref":"","articles":[]},{"title":"AspectJ注解驱动:注解能完全替代AspectJ语言吗?","level":"1.2.18","depth":2,"ref":"","articles":[]},{"title":"面试","level":"1.2.19","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","-lunr","-search","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"livereload":{},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SpringAOP解析","gitbook":"*","description":"一本解析SpringAOP的书"},"file":{"path":"Chapter1/1.1.md","mtime":"2023-10-27T04:58:10.433Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-27T05:00:21.117Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
