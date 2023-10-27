@@ -7,7 +7,13 @@
 #未被追踪的文件会存在于所有的分支，一旦作出修改提交后就独属于某个分支。
 
 #我们要模拟，遍历所有符合条件的文件夹，然后逐次的复制并提交文件。
-
+tmp=$(ls -l ./ |awk '/^d/ {print $NF}')
+for path in $tmp
+do
+    cd $path
+	gitbook build
+    cd ../
+done
 #切换到主分支
 git checkout master
 #将所有的添加到我们想要的地方
