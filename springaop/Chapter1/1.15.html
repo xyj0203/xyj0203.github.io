@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现? · SpringAOP解析</title>
+        <title>面试 · SpringAOP解析</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -77,10 +77,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="1.13.html" />
     
-    
-    <link rel="prev" href="1.11.html" />
+    <link rel="prev" href="1.14.html" />
     
 
     </head>
@@ -275,7 +273,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.12" data-path="1.12.html">
+        <li class="chapter " data-level="1.2.12" data-path="1.12.html">
             
                 <a href="1.12.html">
             
@@ -314,7 +312,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.15" data-path="1.15.html">
+        <li class="chapter active" data-level="1.2.15" data-path="1.15.html">
             
                 <a href="1.15.html">
             
@@ -524,7 +522,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现?</a>
+        <a href=".." >面试</a>
     </h1>
 </div>
 
@@ -536,28 +534,15 @@
                             
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#spring-aop&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x4E3A;&#x4EC0;&#x4E48;spring-framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;aop-&#x5B9E;&#x73B0;"><b></b>Spring AOP&#x4EE3;&#x7406;&#x5B9E;&#x73B0;:&#x4E3A;&#x4EC0;&#x4E48;Spring Framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;AOP &#x5B9E;&#x73B0;?</a></li></ul></div><a href="#spring-aop&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x4E3A;&#x4EC0;&#x4E48;spring-framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;aop-&#x5B9E;&#x73B0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="spring-aop&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x4E3A;&#x4EC0;&#x4E48;spring-framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;aop-&#x5B9E;&#x73B0;"><a name="spring-aop&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x4E3A;&#x4EC0;&#x4E48;spring-framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;aop-&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#spring-aop&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x4E3A;&#x4EC0;&#x4E48;spring-framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;aop-&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>Spring AOP&#x4EE3;&#x7406;&#x5B9E;&#x73B0;:&#x4E3A;&#x4EC0;&#x4E48;Spring Framework&#x9009;&#x62E9;&#x4E09;&#x79CD;&#x4E0D;&#x540C;AOP &#x5B9E;&#x73B0;?</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x9762;&#x8BD5;"><b></b>&#x9762;&#x8BD5;</a></li></ul></div><a href="#&#x9762;&#x8BD5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x9762;&#x8BD5;"><a name="&#x9762;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x9762;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9762;&#x8BD5;</h1>
+<p>Spring AOP &#x548C; AspectJ AOP&#x5B58;&#x5728;&#x54EA;&#x4E9B;&#x533A;&#x522B;&#xFF1F;</p>
 <ul>
-<li>JDK &#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5B9E;&#x73B0;-&#x57FA;&#x4E8E;&#x63A5;&#x53E3;&#x4EE3;&#x7406;</li>
-<li>CGLIB&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5B9E;&#x73B0;-&#x57FA;&#x4E8E;&#x7C7B;&#x4EE3;&#x7406;&#xFF08;&#x5B57;&#x8282;&#x7801;&#x63D0;&#x5347;&#xFF09;</li>
-<li>AspectJ&#x9002;&#x914D;&#x5B9E;&#x73B0;</li>
+<li>AspectJ&#x662F;AOP&#x5B8C;&#x6574;&#x5B9E;&#x73B0;&#xFF0C;Spring AOP&#x662F;&#x90E8;&#x5206;&#x5B9E;&#x73B0;&#xFF0C;&#x5F53;&#x7136;Spring AOP&#x5728;&#x5E95;&#x5C42;&#x4E5F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;AspectJ</li>
+<li>Spring AOP&#x6BD4;AspectJ&#x4F7F;&#x7528;&#x66F4;&#x7B80;&#x5355;&#xFF0C;Spring AOP&#x5B8C;&#x5168;&#x4F7F;&#x7528;JAVA&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;AspectJ&#x5E95;&#x5C42;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x7F16;&#x8BD1;&#x5668;&#x6765;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#xFF0C;&#x5E76;&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x5957;&#x8BED;&#x6CD5;&#xFF0C;&#x5BF9;&#x4E8E;&#x90E8;&#x5206;JAVA&#x7A0B;&#x5E8F;&#x5458;&#x6765;&#x8BF4;&#x4E0D;&#x662F;&#x5F88;&#x53CB;&#x597D;&#x3002;</li>
+<li>Spring AOP &#x6574;&#x5408;AspectJ&#x6CE8;&#x89E3;&#x4E0E;Spring IOC&#x5BB9;&#x5668;&#xFF0C;&#x8FD9;&#x6837;&#x5BF9;&#x4E8E;Spring&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x3002;</li>
+<li>Spring AOP&#x4EC5;&#x652F;&#x6301;&#x57FA;&#x4E8E;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;AOP</li>
+<li>Spring AOP&#x4EC5;&#x652F;&#x6301;&#x65B9;&#x6CD5;&#x7EA7;&#x522B;&#x7684;Pointcuts&#xFF0C;&#x800C;AspectJ&#x5219;&#x662F;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x53C2;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x5F62;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x652F;&#x6301;&#x3002;</li>
 </ul>
-<p>&#x5728;Spring&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;aop&#x4EE3;&#x7406;&#x7684;&#x9876;&#x5C42;&#x63A5;&#x53E3;AopProxy,&#x4E3B;&#x8981;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x91CD;&#x8F7D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7C7B;&#x7684;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x52A0;&#x8F7D;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x7C7B;&#xFF0C;&#x7B2C;&#x4E8C;&#x79CD;&#x5219;&#x662F;&#x6307;&#x5B9A;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">AopProxy</span> </span>{
-    <span class="hljs-function">Object <span class="hljs-title">getProxy</span><span class="hljs-params">()</span></span>;
-    <span class="hljs-function">Object <span class="hljs-title">getProxy</span><span class="hljs-params">(@Nullable ClassLoader classLoader)</span></span>;
-}
-</code></pre>
-<p>&#x5176;&#x4E2D;&#x4E3B;&#x8981;&#x6709;&#x4E24;&#x4E2A;&#x5B9E;&#x73B0;JdkDynamicAopProxy&#x3001;CglibAopProxy</p>
-<p>JDK&#x7684;&#x5316;&#x4E3B;&#x8981;&#x662F;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7684;</p>
-<p><img src="../images/QQ&#x622A;&#x56FE;20231029160034.png" alt=""></p>
-<p>&#x5B9E;&#x73B0;&#x4E86;AopProxy&#x548C;InvocationHandler&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;AOP&#x7684;&#x4EE3;&#x7406;&#x3002;</p>
-<p>&#x7B2C;&#x4E8C;&#x79CD;&#x5219;&#x662F;CglibAopProxy,&#x901A;&#x8FC7;CGlib&#x6765;&#x8FDB;&#x884C;&#x5B57;&#x8282;&#x7801;&#x7684;&#x63D0;&#x5347;&#xFF0C;&#x7136;&#x540E;&#x4EE5;&#x4E4B;&#x524D;&#x7684;&#x7C7B;&#x4F5C;&#x4E3A;&#x65B0;&#x7684;&#x7C7B;&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x529F;&#x80FD;&#x7684;&#x63D0;&#x5347;&#x3002;</p>
-<p><img src="../images/QQ&#x622A;&#x56FE;20231029160127.png" alt=""></p>
-<p>&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#x5747;&#x4E3A;&#x5305;&#x5185;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5BF9;&#x4E8E;&#x5916;&#x90E8;&#x6765;&#x8BF4;&#x662F;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7684;&#xFF0C;&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x89C4;&#x5B9A;&#x5728;&#x6307;&#x5B9A;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x4EE3;&#x7406;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5373;&#x5BF9;&#x4E8E;&#x63A5;&#x53E3;&#x91C7;&#x7528;JDK&#xFF0C;&#x5BF9;&#x4E8E;&#x7C7B;&#x7684;&#x8BDD;&#x91C7;&#x7528;&#x5B57;&#x8282;&#x7801;&#x63D0;&#x5347;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
-<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x6765;&#x770B;&#x4E00;&#x4E0B;AspectJ&#x7684;&#x5B9E;&#x73B0;</p>
-<p><img src="../images/QQ&#x622A;&#x56FE;20231029160418.png" alt=""></p>
-<p>&#x901A;&#x8FC7;AspectJ&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x8FDB;&#x884C;&#x4EE3;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4E0E;Aspect&#x6765;&#x8FDB;&#x884C;&#x4E86;&#x6574;&#x5408;&#x3002;&#x53D6;&#x51B3;&#x4E8E;&#x7528;&#x6237;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x901A;&#x5E38;&#x91C7;&#x7528;&#x7684;&#x662F;xml&#xFF0C;&#x5F88;&#x5C11;&#x7528;&#x5230;&#x5E95;&#x5C42;&#x7684;API&#x3002;</p>
 
                                 
                                 </section>
@@ -569,14 +554,10 @@
 
             
                 
-                <a href="1.11.html" class="navigation navigation-prev " aria-label="Previous page: Spring AOP Advice类型:Spring AOP丰富了哪些AOP Advice 呢?">
+                <a href="1.14.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: CGLIB动态代理:为什么Java动态代理无法满定AOP的需要?">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="1.13.html" class="navigation navigation-next " aria-label="Next page: JDK动态代理:为什么Proxy.newProxyInstance会生成新的字节码?">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -585,7 +566,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现?","level":"1.2.12","depth":2,"next":{"title":"JDK动态代理:为什么Proxy.newProxyInstance会生成新的字节码?","level":"1.2.13","depth":2,"path":"Chapter1/1.13.md","ref":"Chapter1/1.13.md","articles":[]},"previous":{"title":"Spring AOP Advice类型:Spring AOP丰富了哪些AOP Advice 呢?","level":"1.2.11","depth":2,"path":"Chapter1/1.11.md","ref":"Chapter1/1.11.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","-lunr","-search"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SpringAOP解析","gitbook":"*","description":"一本解析SpringAOP的书"},"file":{"path":"Chapter1/1.12.md","mtime":"2023-10-29T10:12:51.880Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-30T13:37:13.104Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试","level":"1.2.15","depth":2,"next":{"title":"Spring AOP 基础","level":"1.3","depth":1,"ref":"","articles":[{"title":"@AspectJ注解创建代理","level":"1.3.1","depth":2,"ref":"","articles":[]},{"title":"编程方式创建@AspectJ代理","level":"1.3.2","depth":2,"ref":"","articles":[]},{"title":"标准代理工厂API-ProxyFactory","level":"1.3.3","depth":2,"ref":"","articles":[]},{"title":"@AspectJ Pointcut指令与表达式","level":"1.3.4","depth":2,"ref":"","articles":[]},{"title":"XML配置Pointcut","level":"1.3.5","depth":2,"ref":"","articles":[]},{"title":"API实现Pointcut","level":"1.3.6","depth":2,"ref":"","articles":[]},{"title":"@AspectJ拦截动作：@Around与@Pointcut有区别吗？","level":"1.3.7","depth":2,"ref":"","articles":[]},{"title":"XML配置Around Advice","level":"1.3.8","depth":2,"ref":"","articles":[]}]},"previous":{"title":"CGLIB动态代理:为什么Java动态代理无法满定AOP的需要?","level":"1.2.14","depth":2,"path":"Chapter1/1.14.md","ref":"Chapter1/1.14.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","-lunr","-search"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SpringAOP解析","gitbook":"*","description":"一本解析SpringAOP的书"},"file":{"path":"Chapter1/1.15.md","mtime":"2023-10-29T11:48:17.137Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-30T13:37:13.104Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
