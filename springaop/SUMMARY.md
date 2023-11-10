@@ -26,6 +26,9 @@
   - [API实现Pointcut](Chapter2/2.7.md)
   - [API 实现 Around Advice](Chapter2/2.8.md)
   - [@AspectJ 前置动作](Chapter2/2.9.md)
+  - [Before Advice](Chapter2/2.10.md)
+  - [@AspectJ 后置动作](Chapter2/2.11.md)
+  - [自动动态代理](Chapter2/2.12.md)
 - Spring AOP API 设计与实现
 - Spring对设计模式的应用
 - 综合运用章节 
