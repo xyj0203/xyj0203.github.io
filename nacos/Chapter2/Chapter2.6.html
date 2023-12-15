@@ -1,0 +1,577 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.6 技术探讨OR学习总结 · Nacos 分析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莴苣菜">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="Chapter2.5.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Chapter1.1.html">
+            
+                <a href="../Chapter1/Chapter1.1.html">
+            
+                    
+                    1.1 什么是nacos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/Chapter1.2.html">
+            
+                <a href="../Chapter1/Chapter1.2.html">
+            
+                    
+                    1.2 nacos的功能和生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/Chapter1.3.html">
+            
+                <a href="../Chapter1/Chapter1.3.html">
+            
+                    
+                    1.3 nacos专业名词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/Chapter1.4.html">
+            
+                <a href="../Chapter1/Chapter1.4.html">
+            
+                    
+                    1.4 nacos架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/Chapter1.5.html">
+            
+                <a href="../Chapter1/Chapter1.5.html">
+            
+                    
+                    1.5 nacos的安装启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    第二章 实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Chapter2.1.html">
+            
+                <a href="Chapter2.1.html">
+            
+                    
+                    2.1 NacosClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Chapter2.2.html">
+            
+                <a href="Chapter2.2.html">
+            
+                    
+                    2.2 Nacos集成Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Chapter2.3.html">
+            
+                <a href="Chapter2.3.html">
+            
+                    
+                    2.3 Nacos集成SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Chapter2.4.html">
+            
+                <a href="Chapter2.4.html">
+            
+                    
+                    2.4 Nacos集成SpringCloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="Chapter2.5.html">
+            
+                <a href="Chapter2.5.html">
+            
+                    
+                    2.5Nacos集成dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.6" data-path="Chapter2.6.html">
+            
+                <a href="Chapter2.6.html">
+            
+                    
+                    2.6 技术探讨OR学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    第三章 源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Chapter3/Chapter3.1.html">
+            
+                <a href="../Chapter3/Chapter3.1.html">
+            
+                    
+                    3.1核心特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Chapter3/Chapter3.2.html">
+            
+                <a href="../Chapter3/Chapter3.2.html">
+            
+                    
+                    3.2测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    第四章 总结期许
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    第五章 技术畅想
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.6 技术探讨OR学习总结</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#29-&#x6280;&#x672F;&#x63A2;&#x8BA8;or&#x5B66;&#x4E60;&#x603B;&#x7ED3;"><b></b>2.9 &#x6280;&#x672F;&#x63A2;&#x8BA8;OR&#x5B66;&#x4E60;&#x603B;&#x7ED3;</a></li><ul><li><span class="title-icon "></span><a href="#291-&#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7684;&#x95EE;&#x9898;"><b></b>2.9.1 &#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7684;&#x95EE;&#x9898;</a></li><li><span class="title-icon "></span><a href="#292-&#x5173;&#x4E8E;mysql&#x7684;&#x62A5;&#x9519;"><b></b>2.9.2 &#x5173;&#x4E8E;Mysql&#x7684;&#x62A5;&#x9519;</a></li><li><span class="title-icon "></span><a href="#293-&#x5173;&#x4E8E;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;"><b></b>2.9.3 &#x5173;&#x4E8E;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;</a></li></ul></ul></div><a href="#29-&#x6280;&#x672F;&#x63A2;&#x8BA8;or&#x5B66;&#x4E60;&#x603B;&#x7ED3;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="29-&#x6280;&#x672F;&#x63A2;&#x8BA8;or&#x5B66;&#x4E60;&#x603B;&#x7ED3;"><a name="29-&#x6280;&#x672F;&#x63A2;&#x8BA8;or&#x5B66;&#x4E60;&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#29-&#x6280;&#x672F;&#x63A2;&#x8BA8;or&#x5B66;&#x4E60;&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.9 &#x6280;&#x672F;&#x63A2;&#x8BA8;OR&#x5B66;&#x4E60;&#x603B;&#x7ED3;</h1>
+<p>&#x524D;&#x9762;&#x6211;&#x4EEC;&#x5927;&#x6982;&#x5B66;&#x4E60;&#x4E86;nacos&#x4E0E;&#x5404;&#x79CD;&#x6846;&#x67B6;&#x7684;&#x7ED3;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x662F;&#x53C2;&#x7167;&#x5B98;&#x7F51;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x6211;&#x60F3;&#x544A;&#x8BC9;&#x5927;&#x5BB6;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x5B66;&#x4E60;&#x6700;&#x5FEB;&#x7684;&#x65B9;&#x5F0F;&#x5C31;&#x662F;&#x53C2;&#x7167;&#x5B98;&#x7F51;&#xFF0C;&#x7136;&#x540E;&#x5148;&#x4F1A;&#x4F7F;&#x7528;&#xFF0C;&#x7136;&#x540E;&#x4E86;&#x89E3;&#x5B9E;&#x73B0;&#xFF0C;&#x518D;&#x5230;&#x6DF1;&#x5165;&#x6E90;&#x7801;&#x3002;</p>
+<h2 id="291-&#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7684;&#x95EE;&#x9898;"><a name="291-&#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7684;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#291-&#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7684;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>2.9.1 &#x5173;&#x4E8E;&#x65E5;&#x5FD7;&#x7684;&#x95EE;&#x9898;</h2>
+<p><a href="https://www.cnblogs.com/fangjb/p/12964710.html" target="_blank">SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;. SLF4J: Defaulting to no-operation (NOP) logger implementation</a></p>
+<h2 id="292-&#x5173;&#x4E8E;mysql&#x7684;&#x62A5;&#x9519;"><a name="292-&#x5173;&#x4E8E;mysql&#x7684;&#x62A5;&#x9519;" class="anchor-navigation-ex-anchor" href="#292-&#x5173;&#x4E8E;mysql&#x7684;&#x62A5;&#x9519;"><i class="fa fa-link" aria-hidden="true"></i></a>2.9.2 &#x5173;&#x4E8E;Mysql&#x7684;&#x62A5;&#x9519;</h2>
+<p>MySQLNonTransientConnectionException: Could not create connection to database server.</p>
+<p>mysql&#x9A71;&#x52A8;5&#x548C;8&#x4E0D;&#x517C;&#x5BB9;&#xFF0C;&#x6362;&#x4E00;&#x4E2A;&#x9A71;&#x52A8;&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="293-&#x5173;&#x4E8E;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;"><a name="293-&#x5173;&#x4E8E;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;" class="anchor-navigation-ex-anchor" href="#293-&#x5173;&#x4E8E;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;"><i class="fa fa-link" aria-hidden="true"></i></a>2.9.3 &#x5173;&#x4E8E;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;</h2>
+<p>&#x56E0;&#x4E3A;&#x5927;&#x591A;&#x6570;&#x7684;nacos&#x662F;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#xFF08;&#x66B4;&#x9732;&#x5728;&#x5185;&#x7F51;&#x7684;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x597D;&#x8FD8;&#x662F;&#x5F00;&#x542F;&#x6743;&#x9650;&#x8BA4;&#x8BC1;&#x6BD4;&#x8F83;&#x597D;&#x3002;&#x90A3;&#x4E48;&#x5F00;&#x542F;&#x7684;&#x65B9;&#x5F0F;&#x5B98;&#x7F51;&#x4E5F;&#x5DF2;&#x7ECF;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x4E86;&#x3002;</p>
+<p><a href="https://nacos.io/zh-cn/docs/v2/guide/user/auth.html" target="_blank">&#x6743;&#x9650;&#x8BA4;&#x8BC1;</a>&#x6587;&#x6863;&#x6E05;&#x6670;&#x660E;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x5F00;&#x542F;&#x4E86;&#x9A8C;&#x8BC1;&#x90A3;&#x4E48;&#x8981;&#x5728;&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x524D;&#x5148;&#x8FDB;&#x884C;&#x6743;&#x9650;&#x7684;&#x6821;&#x9A8C;&#xFF0C;&#x6211;&#x4EEC;&#x6765;&#x8FDB;&#x884C;docker&#x7684;&#x5F00;&#x542F;&#x9274;&#x6743;&#x7684;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p><strong>&#x4E3A;&#x4E86;&#x7CFB;&#x7EDF;&#x5B89;&#x5168;&#x8D77;&#x89C1;&#xFF0C;&#x65B0;&#x7248;&#x672C;&#xFF08;Nacos 2.2.1&#xFF09;&#x5220;&#x9664;&#x4E86;&#x4EE5;&#x4E0B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x8BF7;&#x5728;&#x542F;&#x52A8;&#x65F6;&#x81EA;&#x884C;&#x6DFB;&#x52A0;&#xFF0C;&#x5426;&#x5219;&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x62A5;&#x9519;&#x3002;</strong></p>
+<ol>
+<li>NACOS_AUTH_IDENTITY_KEY</li>
+<li>NACOS_AUTH_IDENTITY_VALUE</li>
+<li>NACOS_AUTH_TOKEN</li>
+</ol>
+<p>&#x9996;&#x5148;&#x7684;&#x8BDD;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x79FB;&#x9664;docker&#x5BB9;&#x5668;</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># &#x505C;&#x6B62;&#x5BB9;&#x5668; </span>
+docker stop b59ea55b8973
+<span class="hljs-comment"># &#x79FB;&#x9664;&#x5BB9;&#x5668;</span>
+docker rm b59ea55b8973
+<span class="hljs-comment"># &#x542F;&#x52A8;&#x65B0;&#x7684;&#x5BB9;&#x5668;</span>
+docker run \
+--name nacos-quick \
+<span class="hljs-_">-e</span> MODE=standalone \
+<span class="hljs-_">-e</span> NACOS_AUTH_ENABLE=<span class="hljs-literal">true</span> \
+<span class="hljs-_">-e</span> NACOS_AUTH_TOKEN=VGhpc0lzTXlDdXN0b21TZWNyZXRLZXkwMTIzNDU2Nzg \
+<span class="hljs-_">-e</span> NACOS_AUTH_IDENTITY_KEY=nacos  \
+<span class="hljs-_">-e</span> NACOS_AUTH_IDENTITY_VALUE=nacos \
+-p 8848:8848 \
+-p 9848:9848 \
+<span class="hljs-_">-d</span> nacos/nacos-server:v2.2.3
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x914D;&#x7F6E;&#x4E86;&#x8BA4;&#x8BC1;&#x4E4B;&#x540E;&#x7684;&#x64CD;&#x4F5C;&#x90FD;&#x8981;&#x5148;&#x8F93;&#x5165;&#x8D26;&#x53F7;&#x5BC6;&#x7801;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#xFF0C; &#x6211;&#x4EEC;&#x4EE5;dubbo&#x4E3A;&#x793A;&#x4F8B;&#x6765;&#x7EE7;&#x7EED;&#x6F14;&#x793A;&#x3002;</p>
+<p>&#x672A;&#x6DFB;&#x52A0;&#x6743;&#x9650;</p>
+<p><a href="../images/20230930154336.png" data-lightbox="6d0f8be0-9fdc-4188-b757-3ca7d0f7dd5d" data-title=""><img src="../images/20230930154336.png" alt=""></a></p>
+<p>&#x4F1A;&#x5728;&#x6CE8;&#x518C;&#x7684;&#x65F6;&#x5019;&#x62A5;&#x9519;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5C31;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6DFB;&#x52A0;&#x8D26;&#x53F7;&#x5BC6;&#x7801;</p>
+<pre><code class="lang-properties">nacos://192.168.150.101:8848?username=nacos&amp;password=nacos
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x9274;&#x6743;&#x6210;&#x529F;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter2.5.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.5Nacos集成dubbo">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.6 技术探讨OR学习总结","level":"2.1.6","depth":2,"next":{"title":"第三章 源码解析","level":"3.1","depth":1,"ref":"","articles":[{"title":"3.1核心特性","level":"3.1.1","depth":2,"path":"Chapter3/Chapter3.1.md","ref":"Chapter3/Chapter3.1.md","articles":[]},{"title":"3.2测试","level":"3.1.2","depth":2,"path":"Chapter3/Chapter3.2.md","ref":"Chapter3/Chapter3.2.md","articles":[]}]},"previous":{"title":"2.5Nacos集成dubbo","level":"2.1.5","depth":2,"path":"Chapter2/Chapter2.5.md","ref":"Chapter2/Chapter2.5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","lightbox","-lunr","-search","search-pro"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"search-pro":{},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nacos 分析","gitbook":"*","description":"这是一本关于nacos源码分析的书， 本文从使用到源码解读，一步步去分析nacos设计者的思路"},"file":{"path":"Chapter2/Chapter2.6.md","mtime":"2023-12-07T11:08:14.382Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-15T04:06:29.579Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

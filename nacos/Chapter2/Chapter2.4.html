@@ -1,0 +1,777 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.4 Nacos集成SpringCloud · Nacos 分析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莴苣菜">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter2.5.html" />
+    
+    
+    <link rel="prev" href="Chapter2.3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Chapter1.1.html">
+            
+                <a href="../Chapter1/Chapter1.1.html">
+            
+                    
+                    1.1 什么是nacos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/Chapter1.2.html">
+            
+                <a href="../Chapter1/Chapter1.2.html">
+            
+                    
+                    1.2 nacos的功能和生态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/Chapter1.3.html">
+            
+                <a href="../Chapter1/Chapter1.3.html">
+            
+                    
+                    1.3 nacos专业名词
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/Chapter1.4.html">
+            
+                <a href="../Chapter1/Chapter1.4.html">
+            
+                    
+                    1.4 nacos架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/Chapter1.5.html">
+            
+                <a href="../Chapter1/Chapter1.5.html">
+            
+                    
+                    1.5 nacos的安装启动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    第二章 实践
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Chapter2.1.html">
+            
+                <a href="Chapter2.1.html">
+            
+                    
+                    2.1 NacosClient
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Chapter2.2.html">
+            
+                <a href="Chapter2.2.html">
+            
+                    
+                    2.2 Nacos集成Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Chapter2.3.html">
+            
+                <a href="Chapter2.3.html">
+            
+                    
+                    2.3 Nacos集成SpringBoot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.4" data-path="Chapter2.4.html">
+            
+                <a href="Chapter2.4.html">
+            
+                    
+                    2.4 Nacos集成SpringCloud
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="Chapter2.5.html">
+            
+                <a href="Chapter2.5.html">
+            
+                    
+                    2.5Nacos集成dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="Chapter2.6.html">
+            
+                <a href="Chapter2.6.html">
+            
+                    
+                    2.6 技术探讨OR学习总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    第三章 源码解析
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../Chapter3/Chapter3.1.html">
+            
+                <a href="../Chapter3/Chapter3.1.html">
+            
+                    
+                    3.1核心特性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../Chapter3/Chapter3.2.html">
+            
+                <a href="../Chapter3/Chapter3.2.html">
+            
+                    
+                    3.2测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    第四章 总结期许
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    第五章 技术畅想
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.4 Nacos集成SpringCloud</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#24-nacos&#x96C6;&#x6210;springcloud"><b></b>2.4 Nacos&#x96C6;&#x6210;SpringCloud</a></li><ul><li><span class="title-icon "></span><a href="#241-nacos&#x914D;&#x7F6E;springcloud"><b></b>2.4.1 Nacos&#x914D;&#x7F6E;SpringCloud</a></li><li><span class="title-icon "></span><a href="#242-nacos&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x6E90;"><b></b>2.4.2 Nacos&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x6E90;</a></li><li><span class="title-icon "></span><a href="#243-nacos&#x670D;&#x52A1;&#x53D1;&#x73B0;"><b></b>2.4.3 nacos&#x670D;&#x52A1;&#x53D1;&#x73B0;</a></li></ul></ul></div><a href="#24-nacos&#x96C6;&#x6210;springcloud" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p>&#x4E0A;&#x4E00;&#x7AE0;&#x6211;&#x4EEC;&#x5B66;&#x4E60;&#x4E86;&#x96C6;&#x6210;SpringBoot&#xFF0C;&#x5176;&#x5B9E;&#x548C;&#x5BF9;&#x5E94;&#x7684;Spring&#x6CA1;&#x6709;&#x592A;&#x591A;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x8FD8;&#x662F;&#x914D;&#x7F6E;&#x548C;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x6765;&#x4E86;&#x89E3;&#x4E00;&#x4E0B;SpringCloud&#xFF0C;&#x5BF9;&#x4E8E;&#x5355;&#x4F53;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x4E0D;&#x6EE1;&#x8DB3;&#x5927;&#x578B;&#x7684;&#x4E92;&#x8054;&#x7F51;&#x67B6;&#x6784;&#xFF0C;&#x56E0;&#x6B64;&#x8D8A;&#x6765;&#x8D8A;&#x591A;&#x7684;&#x5E94;&#x7528;&#x8F6C;&#x6362;&#x5230;&#x4E86;&#x5FAE;&#x670D;&#x52A1;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x6709;SpringCloud &#x548C;SpringCloud Alibaba &#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x9488;&#x5BF9;&#x7684;&#x662F;&#x7B2C;&#x4E8C;&#x4E2A;&#xFF0C;&#x56E0;&#x4E3A;nacos&#x672C;&#x8EAB;&#x4E5F;&#x662F;&#x963F;&#x91CC;&#x751F;&#x6001;&#x91CC;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x63A2;&#x8BA8;nacos&#x5728;SpringCloud&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<h1 id="24-nacos&#x96C6;&#x6210;springcloud"><a name="24-nacos&#x96C6;&#x6210;springcloud" class="anchor-navigation-ex-anchor" href="#24-nacos&#x96C6;&#x6210;springcloud"><i class="fa fa-link" aria-hidden="true"></i></a>2.4 Nacos&#x96C6;&#x6210;SpringCloud</h1>
+<p>&#x9996;&#x5148;&#x4FBF;&#x662F;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x53D8;&#x5316;&#x4E3A;alibaba&#x4E0B;&#x9762;&#x7684;&#x7EC4;&#x4EF6;&#x4F9D;&#x8D56;&#x3002;</p>
+<pre><code class="lang-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-config<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.2.1.RELEASE<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p>&#x5176;&#x6B21;&#x4FBF;&#x662F;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x53D8;&#x5316;&#xFF0C;&#x4E4B;&#x524D;&#x662F;application.properties&#xFF0C;&#x73B0;&#x5728;&#x662F;&#x5FAE;&#x670D;&#x52A1;&#xFF0C;&#x6240;&#x4EE5;&#x53D8;&#x6210;&#x4E86;bootstrap.properties&#xFF0C;</p>
+<h2 id="241-nacos&#x914D;&#x7F6E;springcloud"><a name="241-nacos&#x914D;&#x7F6E;springcloud" class="anchor-navigation-ex-anchor" href="#241-nacos&#x914D;&#x7F6E;springcloud"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.1 Nacos&#x914D;&#x7F6E;SpringCloud</h2>
+<p>&#x8FD9;&#x4E2A;&#x5C0F;&#x9879;&#x76EE;&#x662F;nacos-spring-cloud-config-example,&#x6211;&#x4EEC;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;&#x51E0;&#x9879;&#x3002;</p>
+<pre><code class="lang-properties"># nacos&#x7684;&#x670D;&#x52A1;&#x5730;&#x5740;
+spring.cloud.nacos.config.server-addr=192.168.150.101:8848
+
+# &#x5E94;&#x7528;&#x540D;
+spring.application.name=example
+# Config Type: properties(Default Value) \ yaml \ yml
+# &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x62D3;&#x5C55;&#x540D;
+spring.cloud.nacos.config.file-extension=properties
+#spring.cloud.nacos.config.file-extension=yaml
+
+# Map Nacos Config: example.properties
+
+# Create the config Of nacos firstly?you can use one of the following two methods:
+## Create Config By OpenAPI
+### Create Config By OpenAPI
+# curl -X POST &apos;http://127.0.0.1:8848/nacos/v1/cs/configs&apos; -d &apos;dataId=example.properties&amp;group=DEFAULT_GROUP&amp;content=useLocalCache=true&apos;
+### Get Config By OpenAPI
+# curl -X GET &apos;http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=example.properties&amp;group=DEFAULT_GROUP&apos;
+
+## Create Config By Console
+### Login the console of Nacos: http://127.0.0.1:8848/nacos/index.html , then create config:
+### Data ID: example.properties
+### Group: DEFAULT_GROUP
+### Content: useLocalCache=true
+</code></pre>
+<p>Controller</p>
+<pre><code class="lang-java"><span class="hljs-meta">@RestController</span>
+<span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;/config&quot;</span>)
+<span class="hljs-comment">// &#x914D;&#x7F6E;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x5237;&#x65B0;&#x7684;</span>
+<span class="hljs-meta">@RefreshScope</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfigController</span> </span>{
+
+    <span class="hljs-meta">@Value</span>(<span class="hljs-string">&quot;${useLocalCache:false}&quot;</span>)
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> useLocalCache;
+
+    <span class="hljs-comment">/**
+     * http://localhost:8080/config/get
+     */</span>
+    <span class="hljs-meta">@RequestMapping</span>(<span class="hljs-string">&quot;/get&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> useLocalCache;
+    }
+}
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6309;&#x7167;&#x63D0;&#x793A;&#x521B;&#x5EFA;&#x914D;&#x7F6E;(&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5728;&#x524D;&#x9762;&#x51E0;&#x8282;&#x521B;&#x5EFA;&#x8FC7;&#x4E86;)&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x542F;&#x52A8;&#x89C2;&#x5BDF;&#xFF0C;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x3002;</p>
+<p><a href="../images/20230930143908.png" data-lightbox="f9693d53-4100-460f-8271-1dad6254c8b6" data-title=""><img src="../images/20230930143908.png" alt=""></a></p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x53BB;&#x4FEE;&#x6539;&#xFF0C;&#x518D;&#x6B21;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;</p>
+<p><a href="../images/20230930144359.png" data-lightbox="ab6a717e-9716-44e5-bbb6-21bec84b77ed" data-title=""><img src="../images/20230930144359.png" alt=""></a></p>
+<p>&#x4E3B;&#x8981;&#x662F;spring.application.name=example&#x548C;spring.cloud.nacos.config.file-extension=properties&#x901A;&#x8FC7;&#x4E24;&#x4E2A;&#x914D;&#x7F6E;&#x9879;&#x4ECE;&#x800C;&#x9501;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</p>
+<h2 id="242-nacos&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x6E90;"><a name="242-nacos&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x6E90;" class="anchor-navigation-ex-anchor" href="#242-nacos&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.2 Nacos&#x914D;&#x7F6E;&#x591A;&#x4E2A;&#x6570;&#x636E;&#x6E90;</h2>
+<p>nacos-spring-cloud-config-multi-data-ids-example</p>
+<p>&#x4ECE;Spring&#x90A3;&#x91CC;&#x6211;&#x4EEC;&#x5927;&#x6982;&#x4E86;&#x89E3;&#x5230;&#x4E86;&#xFF0C;nacos&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x6CE8;&#x518C;&#x591A;&#x4E2A;&#x6570;&#x636E;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;SpringCloud&#x6765;&#x8BF4;&#x80AF;&#x5B9A;&#x4E5F;&#x662F;&#x9700;&#x8981;&#x8FD9;&#x4E2A;&#x9700;&#x6C42;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x63A5;&#x4E0B;&#x6765;&#x5C06;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x5B66;&#x4E60;&#x600E;&#x4E48;&#x6765;&#x4F7F;&#x7528;&#x3002;</p>
+<p>bootstrap.properties&#x6587;&#x4EF6;</p>
+<pre><code class="lang-properties">spring.application.name=multi-data-ids-example
+
+spring.cloud.nacos.config.server-addr=192.168.150.101:8848
+
+spring.cloud.nacos.config.ext-config[0].data-id=app.properties
+spring.cloud.nacos.config.ext-config[0].group=multi-data-ids
+spring.cloud.nacos.config.ext-config[0].refresh=true
+
+spring.cloud.nacos.config.ext-config[1].data-id=datasource.properties
+spring.cloud.nacos.config.ext-config[1].group=multi-data-ids
+
+spring.cloud.nacos.config.ext-config[2].data-id=redis.properties
+spring.cloud.nacos.config.ext-config[2].group=multi-data-ids
+</code></pre>
+<p>&#x91C7;&#x7528;&#x4E86;&#x5982;&#x4E0A;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x6CD5;&#xFF0C;&#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x5B83;&#x8FD9;&#x4E2A;&#x6765;&#x8FDB;&#x884C;&#x62D3;&#x5C55;&#x4E66;&#x5199;&#xFF0C;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x914D;&#x7F6E;&#x8FC7;&#x4E86;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C31;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x542F;&#x52A8;&#x3002;</p>
+<p><a href="../images/20230930145100.png" data-lightbox="ed838b9b-c51a-48d6-8674-4b6e3f5bed04" data-title=""><img src="../images/20230930145100.png" alt=""></a></p>
+<p>&#x542F;&#x52A8;&#x6210;&#x529F;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4E0D;&#x5F00;&#x542F;redis&#x7F13;&#x5B58;&#xFF0C;&#x6765;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x3002;</p>
+<p><a href="../images/20230930145159.png" data-lightbox="0e5c6044-0dc0-430c-a848-2578223765d7" data-title=""><img src="../images/20230930145159.png" alt=""></a></p>
+<p>&#x67E5;&#x8BE2;&#x5230;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x6B64;&#x65F6;&#x7684;app.user.cache=false&#xFF0C;&#x662F;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x7F13;&#x5B58;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x7F13;&#x5B58;&#x6CA1;&#x6570;&#x636E;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6765;&#x5F00;&#x542F;&#x7F13;&#x5B58;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Service</span>
+<span class="hljs-meta">@RefreshScope</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">UserService</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> UserRepository userRepository;
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> RedisTemplate redisTemplate;
+
+    <span class="hljs-meta">@Value</span>(<span class="hljs-string">&quot;${app.user.cache}&quot;</span>)
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> cache;
+
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UserServiceImpl</span><span class="hljs-params">(UserRepository userRepository, RedisTemplate redisTemplate)</span> </span>{
+        <span class="hljs-keyword">this</span>.userRepository = userRepository;
+        <span class="hljs-keyword">this</span>.redisTemplate = redisTemplate;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> User <span class="hljs-title">findById</span><span class="hljs-params">(Long id)</span> </span>{
+        LOGGER.info(<span class="hljs-string">&quot;cache: {}&quot;</span>, cache);
+
+        <span class="hljs-keyword">if</span> (cache) {
+            Object obj = redisTemplate.opsForValue().get(key(id));
+            <span class="hljs-keyword">if</span> (obj != <span class="hljs-keyword">null</span>) {
+                LOGGER.info(<span class="hljs-string">&quot;get user from cache, id: {}&quot;</span>, id);
+                <span class="hljs-keyword">return</span> (User)obj;
+            }
+        }
+
+        User user = userRepository.findById(id).orElse(<span class="hljs-keyword">null</span>);
+        <span class="hljs-keyword">if</span> (user != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">if</span> (cache) {
+                LOGGER.info(<span class="hljs-string">&quot;set cache for user, id: {}&quot;</span>, id);
+                redisTemplate.opsForValue().set(key(id), user);
+            }
+        }
+
+        <span class="hljs-keyword">return</span> user;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> String <span class="hljs-title">key</span><span class="hljs-params">(Long id)</span> </span>{
+        <span class="hljs-keyword">return</span> String.format(<span class="hljs-string">&quot;nacos-spring-cloud-config-multi-data-ids-example:user:%d&quot;</span>, id);
+    }
+
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x7F13;&#x5B58;&#x7684;&#x503C;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x3002;</p>
+<p><a href="../images/20230930145448.png" data-lightbox="079eb4ce-b031-4b7a-9b1e-73504cddfcb0" data-title=""><img src="../images/20230930145448.png" alt=""></a></p>
+<h2 id="243-nacos&#x670D;&#x52A1;&#x53D1;&#x73B0;"><a name="243-nacos&#x670D;&#x52A1;&#x53D1;&#x73B0;" class="anchor-navigation-ex-anchor" href="#243-nacos&#x670D;&#x52A1;&#x53D1;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>2.4.3 nacos&#x670D;&#x52A1;&#x53D1;&#x73B0;</h2>
+<p>nacos-spring-cloud-discovery-example,&#x91CC;&#x9762;&#x6709;&#x4E24;&#x4E2A;&#x5C0F;&#x7684;&#x5B50;&#x9879;&#x76EE;&#xFF0C;&#x5206;&#x522B;&#x626E;&#x6F14;&#x8005;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x6765;&#x770B;consumer</p>
+<pre><code class="lang-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">exclusions</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">exclusion</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba.nacos<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>nacos-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">exclusion</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">exclusions</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba.nacos<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>nacos-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+</code></pre>
+<p>&#x914D;&#x7F6E;&#x6587;&#x4EF6;application.properties</p>
+<pre><code class="lang-properties">server.port=8080
+spring.application.name=service-consumer
+spring.cloud.nacos.discovery.server-addr=192.168.150.101:8848
+</code></pre>
+<p>&#x7136;&#x540E;&#x5C31;&#x662F;&#x6BD4;&#x8F83;&#x4E3B;&#x8981;&#x7684;&#x7C7B;&#x4E86;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-comment">// &#x5F00;&#x542F;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x7684;&#x5BA2;&#x6237;&#x7AEF;</span>
+<span class="hljs-meta">@EnableDiscoveryClient</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NacosConsumerApplication</span> </span>{
+    <span class="hljs-comment">// &#x8D1F;&#x8F7D;&#x5747;&#x8861;</span>
+    <span class="hljs-meta">@LoadBalanced</span>
+    <span class="hljs-meta">@Bean</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> RestTemplate <span class="hljs-title">restTemplate</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> RestTemplate();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        SpringApplication.run(NacosConsumerApplication.class, args);
+    }
+    <span class="hljs-comment">// &#x6D4B;&#x8BD5;&#x7684;&#x63A7;&#x5236;&#x7C7B;</span>
+    <span class="hljs-meta">@RestController</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestController</span> </span>{
+
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> RestTemplate restTemplate;
+
+        <span class="hljs-meta">@Autowired</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TestController</span><span class="hljs-params">(RestTemplate restTemplate)</span> </span>{<span class="hljs-keyword">this</span>.restTemplate = restTemplate;}
+
+        <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/echo/{str}&quot;</span>, method = RequestMethod.GET)
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">echo</span><span class="hljs-params">(@PathVariable String str)</span> </span>{
+            <span class="hljs-keyword">return</span> restTemplate.getForObject(<span class="hljs-string">&quot;http://service-provider/echo/&quot;</span> + str, String.class);
+        }
+    }
+}
+</code></pre>
+<p>&#x751F;&#x4EA7;&#x8005;</p>
+<pre><code class="lang-properties">server.port=8070
+spring.application.name=service-provider
+spring.cloud.nacos.discovery.server-addr=192.168.150.101:8848
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-comment">// &#x5F00;&#x542F;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x5BA2;&#x6237;&#x7AEF;</span>
+<span class="hljs-meta">@EnableDiscoveryClient</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NacosProviderApplication</span> </span>{
+
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+      SpringApplication.run(NacosProviderApplication.class, args);
+   }
+    <span class="hljs-comment">// &#x8C03;&#x7528;&#x7684;&#x670D;&#x52A1;</span>
+   <span class="hljs-meta">@RestController</span>
+   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EchoController</span> </span>{
+      <span class="hljs-meta">@RequestMapping</span>(value = <span class="hljs-string">&quot;/echo/{string}&quot;</span>, method = RequestMethod.GET)
+      <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">echo</span><span class="hljs-params">(@PathVariable String string)</span> </span>{
+         <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello Nacos Discovery &quot;</span> + string;
+      }
+   }
+}
+</code></pre>
+<pre><code class="lang-xml">        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.cloud<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-cloud-starter-alibaba-nacos-discovery<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">exclusions</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">exclusion</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba.nacos<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>nacos-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">exclusion</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">exclusions</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.alibaba.nacos<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>nacos-client<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6765;&#x542F;&#x52A8;&#x751F;&#x4EA7;&#x8005;&#x548C;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x7136;&#x540E;&#x770B;&#x770B;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x662F;&#x5426;&#x80FD;&#x591F;&#x751F;&#x6548;&#x3002;</p>
+<p><a href="../images/20230930150413.png" data-lightbox="8fa1f0b4-113c-4eb5-a78b-30612b4d65bb" data-title=""><img src="../images/20230930150413.png" alt=""></a></p>
+<p>&#x786E;&#x5B9E;&#x8C03;&#x7528;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x670D;&#x52A1;&#xFF0C;&#x5E76;&#x628A;&#x7ED3;&#x679C;&#x7ED9;&#x8FD4;&#x56DE;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E00;&#x4E0B;nacos&#x7684;&#x63A7;&#x5236;&#x53F0;&#x3002;</p>
+<p><a href="../images/20230930150509.png" data-lightbox="54e5d40e-5850-4c45-9daf-e60b4c8451b8" data-title=""><img src="../images/20230930150509.png" alt=""></a></p>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x7279;&#x6027;&#x4FBF;&#x662F;&#x52A8;&#x6001;&#x7684;dns&#xFF0C;&#x8FD9;&#x91CC;&#x7A76;&#x7ADF;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#x5462;&#xFF0C;&#x6211;&#x4EEC;&#x4E4B;&#x540E;&#x7684;&#x6E90;&#x7801;&#x89E3;&#x6790;&#x65F6;&#x4F1A;&#x63D0;&#x5230;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684;&#x77E5;&#x9053;&#x6709;&#x8FD9;&#x4E2A;&#x5F88;&#x9AD8;&#x7EA7;&#x7684;&#x529F;&#x80FD;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x5BF9;&#x4E8E;SpringCloud&#x7684;&#x4F7F;&#x7528;&#x5C31;&#x57FA;&#x672C;&#x4E0A;&#x544A;&#x4E00;&#x6BB5;&#x843D;&#x4E86;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter2.3.html" class="navigation navigation-prev " aria-label="Previous page: 2.3 Nacos集成SpringBoot">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter2.5.html" class="navigation navigation-next " aria-label="Next page: 2.5Nacos集成dubbo">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.4 Nacos集成SpringCloud","level":"2.1.4","depth":2,"next":{"title":"2.5Nacos集成dubbo","level":"2.1.5","depth":2,"path":"Chapter2/Chapter2.5.md","ref":"Chapter2/Chapter2.5.md","articles":[]},"previous":{"title":"2.3 Nacos集成SpringBoot","level":"2.1.3","depth":2,"path":"Chapter2/Chapter2.3.md","ref":"Chapter2/Chapter2.3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","lightbox","-lunr","-search","search-pro"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"search-pro":{},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Nacos 分析","gitbook":"*","description":"这是一本关于nacos源码分析的书， 本文从使用到源码解读，一步步去分析nacos设计者的思路"},"file":{"path":"Chapter2/Chapter2.4.md","mtime":"2023-12-07T11:08:14.381Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-15T04:06:29.579Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,727 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Java AOP 判断模式（Predicate）: 如何筛选Join Point · SpringAOP解析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莴苣菜">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1.8.html" />
+    
+    
+    <link rel="prev" href="1.6.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Spring AOP 总览
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1.1.html">
+            
+                <a href="1.1.html">
+            
+                    
+                    知识储备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1.2.html">
+            
+                <a href="1.2.html">
+            
+                    
+                    AOP引入：OOP存在的局限性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="1.3.html">
+            
+                <a href="1.3.html">
+            
+                    
+                    AOP使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="1.4.html">
+            
+                <a href="1.4.html">
+            
+                    
+                    AOP概念：Aspect、Join Point和Advice等术语理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="1.5.html">
+            
+                <a href="1.5.html">
+            
+                    
+                    Java AOP 设计模式：代理、判断和拦截器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="1.6.html">
+            
+                <a href="1.6.html">
+            
+                    
+                    Java AOP 代理模式（Proxy）: Java静态代理和动态代理的区别是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="1.7.html">
+            
+                <a href="1.7.html">
+            
+                    
+                    Java AOP 判断模式（Predicate）: 如何筛选Join Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="1.8.html">
+            
+                <a href="1.8.html">
+            
+                    
+                    Java AOP 拦截器模式（Interceptor）: 拦截执行分别代表什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="1.9.html">
+            
+                <a href="1.9.html">
+            
+                    
+                    Spring AOP 功能概述：核心特性、编程模型和使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="1.10.html">
+            
+                <a href="1.10.html">
+            
+                    
+                    Spring AOP 编程模型：注解驱动、XML配置驱动和底层API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="1.11.html">
+            
+                <a href="1.11.html">
+            
+                    
+                    Spring AOP Advice类型:Spring AOP丰富了哪些AOP Advice 呢?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="1.12.html">
+            
+                <a href="1.12.html">
+            
+                    
+                    Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="1.13.html">
+            
+                <a href="1.13.html">
+            
+                    
+                    JDK动态代理:为什么Proxy.newProxyInstance会生成新的字节码?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="1.14.html">
+            
+                <a href="1.14.html">
+            
+                    
+                    CGLIB动态代理:为什么Java动态代理无法满定AOP的需要?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="1.15.html">
+            
+                <a href="1.15.html">
+            
+                    
+                    面试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Spring AOP 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2.1.html">
+            
+                <a href="../Chapter2/2.1.html">
+            
+                    
+                    @AspectJ注解创建代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2.2.html">
+            
+                <a href="../Chapter2/2.2.html">
+            
+                    
+                    编程方式创建@AspectJ代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Chapter2/2.3.html">
+            
+                <a href="../Chapter2/2.3.html">
+            
+                    
+                    XML 配置驱动 - 创建AOP代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Chapter2/2.4.html">
+            
+                <a href="../Chapter2/2.4.html">
+            
+                    
+                    标准代理工厂API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../Chapter2/2.5.html">
+            
+                <a href="../Chapter2/2.5.html">
+            
+                    
+                    @AspectJ Pointcut 指令与表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../Chapter2/2.6.html">
+            
+                <a href="../Chapter2/2.6.html">
+            
+                    
+                    XML配置Pointcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../Chapter2/2.7.html">
+            
+                <a href="../Chapter2/2.7.html">
+            
+                    
+                    API实现Pointcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../Chapter2/2.8.html">
+            
+                <a href="../Chapter2/2.8.html">
+            
+                    
+                    API 实现 Around Advice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../Chapter2/2.9.html">
+            
+                <a href="../Chapter2/2.9.html">
+            
+                    
+                    @AspectJ 前置动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../Chapter2/2.10.html">
+            
+                <a href="../Chapter2/2.10.html">
+            
+                    
+                    Before Advice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../Chapter2/2.11.html">
+            
+                <a href="../Chapter2/2.11.html">
+            
+                    
+                    @AspectJ 后置动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../Chapter2/2.12.html">
+            
+                <a href="../Chapter2/2.12.html">
+            
+                    
+                    自动动态代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Spring AOP API 设计与实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Spring对设计模式的应用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    综合运用章节
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Java AOP 判断模式（Predicate）: 如何筛选Join Point</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#java-aop-&#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;predicate&#xFF09;&#x5982;&#x4F55;&#x7B5B;&#x9009;join-point"><b></b>JAVA AOP &#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;Predicate&#xFF09;:&#x5982;&#x4F55;&#x7B5B;&#x9009;Join Point?</a></li></ul></div><a href="#java-aop-&#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;predicate&#xFF09;&#x5982;&#x4F55;&#x7B5B;&#x9009;join-point" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="java-aop-&#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;predicate&#xFF09;&#x5982;&#x4F55;&#x7B5B;&#x9009;join-point"><a name="java-aop-&#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;predicate&#xFF09;&#x5982;&#x4F55;&#x7B5B;&#x9009;join-point" class="anchor-navigation-ex-anchor" href="#java-aop-&#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;predicate&#xFF09;&#x5982;&#x4F55;&#x7B5B;&#x9009;join-point"><i class="fa fa-link" aria-hidden="true"></i></a>JAVA AOP &#x5224;&#x65AD;&#x6A21;&#x5F0F;&#xFF08;Predicate&#xFF09;:&#x5982;&#x4F55;&#x7B5B;&#x9009;Join Point?</h1>
+<ul>
+<li>&#x5224;&#x65AD;&#x6765;&#x6E90;<ul>
+<li>&#x7C7B;&#x578B;&#xFF08;Class&#xFF09;</li>
+<li>&#x65B9;&#x6CD5;&#xFF08;Method&#xFF09;</li>
+<li>&#x6CE8;&#x89E3;&#xFF08;Annotation&#xFF09;</li>
+<li>&#x53C2;&#x6570;&#xFF08;Parameter&#xFF09;</li>
+<li>&#x5F02;&#x5E38;&#xFF08;Exception&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TargetFilterDemo</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> ClassNotFoundException </span>{
+        String  targetClassName = <span class="hljs-string">&quot;com.lettuce.proxy.EchoService&quot;</span>;
+        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5230;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</span>
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        <span class="hljs-comment">// &#x52A0;&#x8F7D;&#x76EE;&#x6807;&#x7C7B;</span>
+        Class&lt;?&gt; targetClass = classLoader.loadClass(targetClassName);
+        <span class="hljs-comment">// &#x65B9;&#x6CD5;&#x5B9A;&#x4E49; String echo(String message)</span>
+        <span class="hljs-comment">// &#x4F7F;&#x7528;Spring&#x53CD;&#x5C04;&#x5DE5;&#x5177;&#x7C7B;</span>
+        Method targetMethod = ReflectionUtils.findMethod(targetClass, <span class="hljs-string">&quot;echo&quot;</span>, String.class);
+        System.out.println(targetMethod);
+    }
+}
+</code></pre>
+<p><img src="../images/QQ&#x622A;&#x56FE;20231027181956.png" alt=""></p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x53BB;&#x52A0;&#x8F7D;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x63A5;&#x53E3;&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x901A;&#x8FC7;Spring&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#x4E5F;&#x83B7;&#x53D6;&#x5230;&#x4E86;&#x5BF9;&#x5E94;&#x7684;Method&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x6253;&#x5370;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#x7B7E;&#x540D;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x5F02;&#x5E38;&#x7684;&#x8BDD;&#x4F1A;&#x6253;&#x5370;&#x5417;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x65B9;&#x6CD5;&#x7B7E;&#x540D;&#x4E0A;&#x52A0;&#x4E0A;&#x5BF9;&#x5E94;&#x7684;&#x5F02;&#x5E38;</p>
+<p><img src="../images/QQ&#x622A;&#x56FE;20231027182133.png" alt=""></p>
+<p>&#x7136;&#x540E;&#x4E5F;&#x80FD;&#x6253;&#x5370;&#x51FA;&#x5BF9;&#x5E94;&#x7684;&#x5F02;&#x5E38;&#x60C5;&#x51B5;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x4F7F;&#x7528;Spring&#x7684;&#x53CD;&#x5C04;API&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x65B9;&#x6CD5;&#x662F;&#x5426;&#x662F;&#x7B26;&#x5408;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x6C42;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TargetFilterDemo</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> ClassNotFoundException </span>{
+        String  targetClassName = <span class="hljs-string">&quot;com.lettuce.proxy.EchoService&quot;</span>;
+        <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5230;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</span>
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        <span class="hljs-comment">// &#x52A0;&#x8F7D;&#x76EE;&#x6807;&#x7C7B;</span>
+        Class&lt;?&gt; targetClass = classLoader.loadClass(targetClassName);
+        <span class="hljs-comment">// &#x65B9;&#x6CD5;&#x5B9A;&#x4E49; String echo(String message)</span>
+        <span class="hljs-comment">// &#x4F7F;&#x7528;Spring&#x53CD;&#x5C04;&#x5DE5;&#x5177;&#x7C7B;</span>
+        Method targetMethod = ReflectionUtils.findMethod(targetClass, <span class="hljs-string">&quot;echo&quot;</span>, String.class);
+        System.out.println(targetMethod);
+
+        <span class="hljs-comment">// &#x5224;&#x65AD;&#x65B9;&#x6CD5;&#x5177;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x6761;&#x4EF6;&#x7684;</span>
+        <span class="hljs-comment">// &#x5728;&#x8FD9;&#x91CC;&#x505A;&#x65B9;&#x6CD5;&#x7684;&#x5177;&#x4F53;&#x8C03;&#x7528;&#xFF0C;&#x53EA;&#x8981;&#x4E0B;&#x65B9;&#x7B26;&#x5408;&#x624D;&#x4F1A;&#x8C03;&#x7528;</span>
+        ReflectionUtils.doWithMethods(
+                targetClass,
+                method -&gt; System.out.println(<span class="hljs-string">&quot;&#x4EC5;&#x629B;&#x51FA;NullPointException &#x548C;&#x53C2;&#x6570;&#x4E3A;String&#x7684;&#x65B9;&#x6CD5;&quot;</span>),
+                <span class="hljs-keyword">new</span> ReflectionUtils.MethodFilter() {
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">matches</span><span class="hljs-params">(Method method)</span> </span>{
+                        Class[] parameterTypes = method.getParameterTypes();
+                        Class[] exceptionTypes = method.getExceptionTypes();
+                        <span class="hljs-keyword">return</span> parameterTypes.length == <span class="hljs-number">1</span>
+                                &amp;&amp; String.class.equals(parameterTypes[<span class="hljs-number">0</span>])
+                                &amp;&amp; exceptionTypes.length == <span class="hljs-number">1</span>
+                                &amp;&amp; NullPointerException.class.equals(exceptionTypes[<span class="hljs-number">0</span>])
+                                ;
+                    }
+                }
+        );
+    }
+}
+</code></pre>
+<p><img src="../images/QQ&#x622A;&#x56FE;20231027182845.png" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8FD9;&#x91CC;&#x627E;&#x5230;&#x4E86;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;AspectJ&#x6765;&#x8BF4;&#x4E5F;&#x662F;&#x91C7;&#x53D6;&#x4E86;&#x8FD9;&#x6837;&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x53C2;&#x6570;&#x662F;&#x5426;&#x6765;&#x8FDB;&#x884C;&#x62E6;&#x622A;&#xFF0C;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;</p>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1.6.html" class="navigation navigation-prev " aria-label="Previous page: Java AOP 代理模式（Proxy）: Java静态代理和动态代理的区别是什么">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1.8.html" class="navigation navigation-next " aria-label="Next page: Java AOP 拦截器模式（Interceptor）: 拦截执行分别代表什么">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Java AOP 判断模式（Predicate）: 如何筛选Join Point","level":"1.2.7","depth":2,"next":{"title":"Java AOP 拦截器模式（Interceptor）: 拦截执行分别代表什么","level":"1.2.8","depth":2,"path":"Chapter1/1.8.md","ref":"Chapter1/1.8.md","articles":[]},"previous":{"title":"Java AOP 代理模式（Proxy）: Java静态代理和动态代理的区别是什么","level":"1.2.6","depth":2,"path":"Chapter1/1.6.md","ref":"Chapter1/1.6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","-lunr","-search"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SpringAOP解析","gitbook":"*","description":"一本解析SpringAOP的书"},"file":{"path":"Chapter1/1.7.md","mtime":"2023-12-07T11:08:15.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-15T04:06:41.169Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

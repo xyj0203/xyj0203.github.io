@@ -1,0 +1,755 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>自动动态代理 · SpringAOP解析</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="莴苣菜">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="2.11.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Spring AOP 总览
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/1.1.html">
+            
+                <a href="../Chapter1/1.1.html">
+            
+                    
+                    知识储备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/1.2.html">
+            
+                <a href="../Chapter1/1.2.html">
+            
+                    
+                    AOP引入：OOP存在的局限性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/1.3.html">
+            
+                <a href="../Chapter1/1.3.html">
+            
+                    
+                    AOP使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../Chapter1/1.4.html">
+            
+                <a href="../Chapter1/1.4.html">
+            
+                    
+                    AOP概念：Aspect、Join Point和Advice等术语理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Chapter1/1.5.html">
+            
+                <a href="../Chapter1/1.5.html">
+            
+                    
+                    Java AOP 设计模式：代理、判断和拦截器模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../Chapter1/1.6.html">
+            
+                <a href="../Chapter1/1.6.html">
+            
+                    
+                    Java AOP 代理模式（Proxy）: Java静态代理和动态代理的区别是什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../Chapter1/1.7.html">
+            
+                <a href="../Chapter1/1.7.html">
+            
+                    
+                    Java AOP 判断模式（Predicate）: 如何筛选Join Point
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../Chapter1/1.8.html">
+            
+                <a href="../Chapter1/1.8.html">
+            
+                    
+                    Java AOP 拦截器模式（Interceptor）: 拦截执行分别代表什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../Chapter1/1.9.html">
+            
+                <a href="../Chapter1/1.9.html">
+            
+                    
+                    Spring AOP 功能概述：核心特性、编程模型和使用限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../Chapter1/1.10.html">
+            
+                <a href="../Chapter1/1.10.html">
+            
+                    
+                    Spring AOP 编程模型：注解驱动、XML配置驱动和底层API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../Chapter1/1.11.html">
+            
+                <a href="../Chapter1/1.11.html">
+            
+                    
+                    Spring AOP Advice类型:Spring AOP丰富了哪些AOP Advice 呢?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../Chapter1/1.12.html">
+            
+                <a href="../Chapter1/1.12.html">
+            
+                    
+                    Spring AOP代理实现:为什么Spring Framework选择三种不同AOP 实现?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../Chapter1/1.13.html">
+            
+                <a href="../Chapter1/1.13.html">
+            
+                    
+                    JDK动态代理:为什么Proxy.newProxyInstance会生成新的字节码?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../Chapter1/1.14.html">
+            
+                <a href="../Chapter1/1.14.html">
+            
+                    
+                    CGLIB动态代理:为什么Java动态代理无法满定AOP的需要?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../Chapter1/1.15.html">
+            
+                <a href="../Chapter1/1.15.html">
+            
+                    
+                    面试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Spring AOP 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="2.1.html">
+            
+                <a href="2.1.html">
+            
+                    
+                    @AspectJ注解创建代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="2.2.html">
+            
+                <a href="2.2.html">
+            
+                    
+                    编程方式创建@AspectJ代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="2.3.html">
+            
+                <a href="2.3.html">
+            
+                    
+                    XML 配置驱动 - 创建AOP代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="2.4.html">
+            
+                <a href="2.4.html">
+            
+                    
+                    标准代理工厂API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="2.5.html">
+            
+                <a href="2.5.html">
+            
+                    
+                    @AspectJ Pointcut 指令与表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="2.6.html">
+            
+                <a href="2.6.html">
+            
+                    
+                    XML配置Pointcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="2.7.html">
+            
+                <a href="2.7.html">
+            
+                    
+                    API实现Pointcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="2.8.html">
+            
+                <a href="2.8.html">
+            
+                    
+                    API 实现 Around Advice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="2.9.html">
+            
+                <a href="2.9.html">
+            
+                    
+                    @AspectJ 前置动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="2.10.html">
+            
+                <a href="2.10.html">
+            
+                    
+                    Before Advice
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="2.11.html">
+            
+                <a href="2.11.html">
+            
+                    
+                    @AspectJ 后置动作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.12" data-path="2.12.html">
+            
+                <a href="2.12.html">
+            
+                    
+                    自动动态代理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Spring AOP API 设计与实现
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Spring对设计模式的应用
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    综合运用章节
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >自动动态代理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;"><b></b>&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x9762;&#x8BD5;"><b></b>&#x9762;&#x8BD5;</a></li></ul></div><a href="#&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;"><a name="&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x52A8;&#x52A8;&#x6001;&#x4EE3;&#x7406;</h1>
+<ul>
+<li>&#x4EE3;&#x8868;&#x5B9E;&#x73B0;<ul>
+<li>org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator</li>
+<li>org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator</li>
+<li>org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator</li>
+</ul>
+</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x6765;&#x628A;&#x4E4B;&#x524D;&#x5F97;&#x624B;&#x52A8;&#x4EE3;&#x7406;&#x7684;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x62F7;&#x8D1D;&#x4E00;&#x4EFD;,&#x5148;&#x6765;&#x770B;BeanNameAutoProxyCreator&#xFF0C;&#x901A;&#x8FC7;BeanName&#x6765;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x4EE3;&#x7406;</p>
+<pre><code class="lang-xml">  <span class="hljs-comment">&lt;!-- &#x8981;&#x4EE3;&#x7406;&#x7684;&#x7C7B; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;echoService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.lettuce.proxy.DefaultEchoService&quot;</span>/&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x4EE3;&#x7406;&#x62E6;&#x622A;&#x65B9;&#x6CD5; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;echoServiceMethodInterceptor&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.lettuce.interceptor.EchoServiceMethodInterceptor&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x4EE3;&#x7406;&#x5DE5;&#x5382;&#x5BF9;&#x8C61; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;echoServiceProxyFactoryBean&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator&quot;</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- &#x4EE3;&#x7406;&#x5F15;&#x7528; --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;beanNames&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;echo*&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;interceptorNames&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>echoServiceMethodInterceptor<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AspectJSchemaBasedAutoProxyDemo</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        ClassPathXmlApplicationContext applicationContext = <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;classpath:META-INF/spring-aop-auto-proxy-context.xml&quot;</span>);
+
+        applicationContext.refresh();
+        EchoService echoService = applicationContext.getBean(<span class="hljs-string">&quot;echoService&quot;</span>, EchoService.class);
+
+        System.out.println(echoService.echo(<span class="hljs-string">&quot;hello world&quot;</span>));
+
+        applicationContext.close();
+    }
+}
+</code></pre>
+<p><img src="../images/QQ&#x622A;&#x56FE;20231110155917.png" alt=""></p>
+<p>&#x62E6;&#x622A;&#x5230;&#x4E86;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x901A;&#x8FC7;Debug&#x6765;&#x67E5;&#x770B;&#x662F;&#x4EC0;&#x4E48;&#x7684;&#x4EE3;&#x7406;</p>
+<p><img src="../images/QQ&#x622A;&#x56FE;20231110160020.png" alt=""></p>
+<p>&#x4F9D;&#x7136;&#x662F;JDK&#x7684;&#x4EE3;&#x7406;&#xFF0C;&#x7136;&#x540E;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x6839;&#x636E;&#x540D;&#x79F0;&#x6765;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x4E0B;&#x6765;&#x7684;DefaultAdvisorAutoProxyCreator&#x5219;&#x662F;&#x6839;&#x636E;&#x5BF9;&#x5E94;&#x7684;Advisor&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x7684;&#x4EE3;&#x7406;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-xml">    <span class="hljs-comment">&lt;!-- &#x8981;&#x4EE3;&#x7406;&#x7684;&#x7C7B; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;echoService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.lettuce.proxy.DefaultEchoService&quot;</span>/&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x4EE3;&#x7406;&#x62E6;&#x622A;&#x65B9;&#x6CD5; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;echoServiceMethodInterceptor&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.lettuce.interceptor.EchoServiceMethodInterceptor&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- &#x4EE3;&#x7406;&#x5DE5;&#x5382;&#x5BF9;&#x8C61; --&gt;</span>
+<span class="hljs-comment">&lt;!--    &lt;bean id=&quot;echoServiceProxyFactoryBean&quot; class=&quot;org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator&quot;&gt;--&gt;</span>
+<span class="hljs-comment">&lt;!--        &amp;lt;!&amp;ndash; &#x4EE3;&#x7406;&#x5F15;&#x7528; &amp;ndash;&amp;gt;--&gt;</span>
+<span class="hljs-comment">&lt;!--        &lt;property name=&quot;beanNames&quot; value=&quot;echo*&quot;/&gt;--&gt;</span>
+<span class="hljs-comment">&lt;!--        &lt;property name=&quot;interceptorNames&quot;&gt;--&gt;</span>
+<span class="hljs-comment">&lt;!--            &lt;value&gt;echoServiceMethodInterceptor&lt;/value&gt;--&gt;</span>
+<span class="hljs-comment">&lt;!--        &lt;/property&gt;--&gt;</span>
+<span class="hljs-comment">&lt;!--    &lt;/bean&gt;--&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- AutoProxy Bean --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator&quot;</span> /&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- Pointcut Bean --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;echoServicePointcut&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.lettuce.pointcut.EchoServicePointcut&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">index</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;echo&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">index</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;com.lettuce.proxy.EchoService&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.aop.support.DefaultPointcutAdvisor&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">index</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;echoServicePointcut&quot;</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">index</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;echoServiceMethodInterceptor&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+<p>&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x5BF9;&#x5E94;&#x7684;&#x6267;&#x884C;&#x5668;&#xFF0C;&#x56E0;&#x4E3A;DefaultAdvisorAutoProxyCreator&#x4E5F;&#x662F;&#x4E00;&#x4E2A;BeanPostProssor&#xFF0C;&#x7136;&#x540E;&#x5462;&#x901A;&#x8FC7;&#x914D;&#x7F6E;DefaultPointcutAdvisor&#x6765;&#x8FDB;&#x884C;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x6240;&#x6709;&#x7684;Advisor&#x3002;</p>
+<p><img src="../images/QQ&#x622A;&#x56FE;20231110161107.png" alt=""></p>
+<h1 id="&#x9762;&#x8BD5;"><a name="&#x9762;&#x8BD5;" class="anchor-navigation-ex-anchor" href="#&#x9762;&#x8BD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9762;&#x8BD5;</h1>
+<ul>
+<li><p>Spring AOP &#x652F;&#x6301;&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x7684;Advice?</p>
+<ul>
+<li>Around Advice</li>
+<li>Before Advice</li>
+<li>After Advice<ul>
+<li>After</li>
+<li>AfterReturning</li>
+<li>AfterThrowing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Spring AOP &#x7F16;&#x7A0B;&#x6A21;&#x578B;&#x6709;&#x54EA;&#x4E9B;&#xFF0C;&#x4EE3;&#x8868;&#x7EC4;&#x4EF6;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</p>
+<ul>
+<li>&#x6CE8;&#x89E3;&#x9A71;&#x52A8;&#xFF1A; &#x89E3;&#x91CA;&#x548C;&#x6574;&#x5408; AspectJ&#x6CE8;&#x89E3;&#xFF0C;&#x5982;@EnableAspectJAutoProxy</li>
+<li>XML &#x914D;&#x7F6E;&#xFF1A; AOP &#x4E0E; IOC Schema-Based &#x76F8;&#x7ED3;&#x5408;</li>
+<li>API &#x7F16;&#x7A0B;&#xFF1A; &#x5982; JoinPoint&#x3001;Pointcut&#x3001;Advice&#x548C;ProxyFactory</li>
+</ul>
+</li>
+<li><p>Spring AOP &#x4E09;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x7684;&#xFF1F;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.11.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: @AspectJ 后置动作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"自动动态代理","level":"1.3.12","depth":2,"next":{"title":"Spring AOP API 设计与实现","level":"1.4","depth":1,"ref":"","articles":[]},"previous":{"title":"@AspectJ 后置动作","level":"1.3.11","depth":2,"path":"Chapter2/2.11.md","ref":"Chapter2/2.11.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","advanced-emoji","alerts","ancre-navigation","change_girls","code","custom-favicon","disqus","-lunr","-search"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"comment-sxqwxkhzpy"},"github":{"url":"https://github.com/xyj0203"},"change_girls":{"time":10,"urls":["girlUrl1","girlUrl2"]},"code":{"copyButtons":false},"donate":{"wechat":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/wechat-pay.jpg","alipay":"https://my-pay-code.oss-cn-hangzhou.aliyuncs.com/ali-pay.jpg","title":"鼓励一下","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"path/to/favicon.ico","alerts":{},"custom-favicon":{},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"advanced-emoji":{"embedEmojis":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"莴苣菜","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"SimSun","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":0,"left":0,"top":0,"bottom":0}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"SpringAOP解析","gitbook":"*","description":"一本解析SpringAOP的书"},"file":{"path":"Chapter2/2.12.md","mtime":"2023-12-07T11:08:15.075Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-12-15T04:06:41.169Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
