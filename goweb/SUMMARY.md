@@ -13,5 +13,6 @@
 
   - [2.1微服务概览](Chapter2/Chapter2.1.md)
   - [2.2微服务设计](Chapter2/Chapter2.2.md)
-  - 
+  - [2.3gRPC & 服务发现](Chapter2/Chapter2.3.md)
+  - [2.4多集群 & 多租户](Chapter2/Chapter2.4.md)
 
