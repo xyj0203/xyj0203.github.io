@@ -3,16 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>莴苣菜的个人图书小屋</title>
+    <title>莴苣菜的个人杂谈</title>
+    <meta name="description" content="星辰大海">
+    <style>
+        body {
+            background-color: #f3f5f7;
+        }
+
+        a{
+            text-decoration: none; /* 取消下划线 */
+            color: inherit; /* 继承父元素的文本颜色 */
+            pointer-events: none; /* 禁止鼠标事件，使其不可选中 */
+            cursor: default; /* 将光标样式设置为默认 */
+        }
+
+        .navbar {
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+        }
+
+        .navbar-brand{
+            margin-top: 50px;
+            font-size: 1.7rem;
+            padding-left: 20px;
+        }
+
+        .header {
+            height: 65=px;
+        }
+
+        .nav-right {
+            margin-left: 250px;
+        }
+
+        .placeholder {
+            height: 36px;
+            width: 100%;
+        }
+        #sidebar {
+            position: fixed;
+            top: 50%; /* 使卡片垂直居中 */
+            right: 20px; /* 距离页面右边距离为 20px，根据需要调整 */
+            transform: translateY(-50%); /* 使用 transform 属性使卡片垂直居中 */
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+            z-index: 999; /* 确保卡片在页面其他内容上方显示 */
+        }
+
+        .fixed-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.fixed-card p {
+    margin-bottom: 10px;
+}
+
+.fixed-card a {
+    text-decoration: none;
+    color: #007bff; /* 设置链接颜色为蓝色 */
+}
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 设置卡片项之间的间距 */
+}
+
+.card-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.card-item:hover {
+    transform: translateY(-5px); /* 添加鼠标悬停时的微小动画效果 */
+}
+
+.date {
+    font-weight: bold;
+    font-size: 0.9rem; /* 调整日期字体大小 */
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 1.5rem; /* 调整标题字体大小 */
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #666;
+    font-size: 1rem; /* 调整描述字体大小 */
+}
+    </style>
+
 </head>
 <body>
-    <h1>个人玩玩，切莫当真</h1>
-    <ul>
-        <li>
-            <a href="./nacos/index.html">nacos解析</a>
-            <a href="./springaop/index.html">SpringAop解析</a>
-            <a href="./goweb/">goweb学习</a>
-        </li>
-    </ul>
+    <div>
+         <!-- 头部-->
+        <header id="header">
+            <div class="placeholder"></div>
+            <div class="navbar navbar-dark shadow-sm">
+
+                <div class="container">
+                    <a href="https://xyj0203.github.io/books/" id="logo" >
+                        <span class="navbar-brand nav-left">
+                            莴苣菜的个人杂谈
+                        </span>
+                    </a>
+
+                    <span class="navbar-brand nav-right">
+                        就算是一个人也该有一个人的样子，不能被看轻。
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- 内容 -->
+        <div id="content" class="container">
+            <div >
+                <div class="card-list">
+                    <a href="./nacos/index.html">
+                        <div class="card-item">
+                            <div class="date">2023-09-26</div>
+                            <div class="title">nacos趣谈</div>
+                            <div class="description">主要记录了一些自己使用nacos的一些心得</div>
+                        </div>
+                    </a>
+                    <a href="./springaop/index.html">
+                        <div class="card-item">
+                            <div class="date">2023-10-27</div>
+                            <div class="title">SpringAop趣谈</div>
+                            <div class="description">跟随大佬重新理解了下AOP的设计思路，领会了一些新的接口</div>
+                        </div>
+                    </a>
+                    <a href="./goweb/">
+                        <div class="card-item">
+                            <div class="date">2023-12-15</div>
+                            <div class="title">goweb 杂谈</div>
+                            <div class="description">主要领会了一些goweb的设计思路，包括工程化的一些思考</div>
+                        </div>
+                    </a>
+                    <a href="./article/index.html">
+                        <div class="card-item">
+                            <div class="date">2024-03-19</div>
+                            <div class="title">个人的日常趣事</div>
+                            <div class="description">主要记录一些比较重大的日常趣事，也许有些事并不应该忘记</div>
+                        </div>
+                    </a>
+
+
+                </div>
+            </div>
+            <div id="sidebar">
+                <h2>莴苣菜</h2>
+                <p>个人简介：一名爱鼓捣编程的小菜鸡。</p>
+                <p>联系方式：18211960120</p>
+                <p>QQ: 2582504569</p>
+                <p>WX: xyj20020815</p>
+                <p>开源社区链接：https://github.com/xyj0203</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+window.addEventListener('scroll', function() {
+    var card = document.querySelector('#sidebar');
+    console.log(card)
+    if(window.scrollY > 100) { // 当页面滚动超过100px时隐藏右边的卡片，可以根据具体需求调整阈值
+        console.log(card)
+        card.style.display = 'none';
+    } else {
+        card.style.display = 'block';
+    }
+});
+    </script>
 </body>
 </html>
