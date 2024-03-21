@@ -3,3 +3,5 @@
 	创建 Chapter1/Chapter1.1
 	创建存放图片的目录 images
 3、构建并提交，构建时记得把对应的目录加入SUMRAY，这样才能保证一定构建。
+
+4、提交命令也给出了commit.sh

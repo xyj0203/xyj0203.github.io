@@ -1,0 +1,410 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.3gRPC & 服务发现 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter2.4.html" />
+    
+    
+    <link rel="prev" href="Chapter2.2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/Chapter1.1.html">
+            
+                <a href="../Chapter1/Chapter1.1.html">
+            
+                    
+                    1.1基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/Chapter1.2.html">
+            
+                <a href="../Chapter1/Chapter1.2.html">
+            
+                    
+                    1.2type定义和server抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/Chapter1.3.html">
+            
+                <a href="../Chapter1/Chapter1.3.html">
+            
+                    
+                    1.3错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    第二章 微服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="Chapter2.1.html">
+            
+                <a href="Chapter2.1.html">
+            
+                    
+                    2.1微服务概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="Chapter2.2.html">
+            
+                <a href="Chapter2.2.html">
+            
+                    
+                    2.2微服务设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.3" data-path="Chapter2.3.html">
+            
+                <a href="Chapter2.3.html">
+            
+                    
+                    2.3gRPC & 服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Chapter2.4.html">
+            
+                <a href="Chapter2.4.html">
+            
+                    
+                    2.4多集群 & 多租户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.3gRPC & 服务发现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="grpc--&#x670D;&#x52A1;&#x53D1;&#x73B0;">gRPC &amp; &#x670D;&#x52A1;&#x53D1;&#x73B0;</h1>
+<h2 id="grpc">gRPC</h2>
+<ul>
+<li>&#x591A;&#x8BED;&#x8A00;&#xFF1A;&#x8BED;&#x8A00;&#x4E2D;&#x7ACB;&#xFF0C;&#x652F;&#x6301;&#x591A;&#x79CD;&#x8BED;&#x8A00;&#x3002; </li>
+<li>&#x8F7B;&#x91CF;&#x7EA7;&#x3001;&#x9AD8;&#x6027;&#x80FD;&#xFF1A;&#x5E8F;&#x5217;&#x5316;&#x652F;&#x6301; PB&#xFF08;Protocol Buffer&#xFF09;&#x548C; JSON&#xFF0C;PB &#x662F;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x65E0;&#x5173;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x5E8F;&#x5217;&#x5316;&#x6846;&#x67B6;&#x3002; </li>
+<li>&#x53EF;&#x63D2;&#x62D4; </li>
+<li>IDL&#xFF1A;&#x57FA;&#x4E8E;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x670D;&#x52A1;&#xFF0C;&#x901A;&#x8FC7; proto3 &#x5DE5;&#x5177;&#x751F;&#x6210;&#x6307;&#x5B9A;&#x8BED;&#x8A00;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3001;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x53E3;&#x4EE5;&#x53CA;&#x5BA2;&#x6237;&#x7AEF; Stub&#x3002; </li>
+<li>&#x8BBE;&#x8BA1;&#x7406;&#x5FF5; </li>
+<li>&#x79FB;&#x52A8;&#x7AEF;&#xFF1A;&#x57FA;&#x4E8E;&#x6807;&#x51C6;&#x7684; HTTP/2 &#x8BBE;&#x8BA1;&#xFF0C;&#x652F;&#x6301;&#x53CC;&#x5411;&#x6D41;&#x3001;&#x6D88;&#x606F;&#x5934;&#x538B;&#x7F29;&#x3001;&#x5355; TCP &#x7684;&#x591A;&#x8DEF;&#x590D;&#x7528;&#x3001;&#x670D;&#x52A1;&#x7AEF;&#x63A8;&#x9001;&#x7B49;&#x7279;&#x6027;&#xFF0C;&#x8FD9;&#x4E9B;&#x7279;&#x6027;&#x4F7F;&#x5F97; gRPC &#x5728;&#x79FB;&#x52A8;&#x7AEF;&#x8BBE;&#x5907;&#x4E0A;&#x66F4;&#x52A0;&#x7701;&#x7535;&#x548C;&#x8282;&#x7701;&#x7F51;&#x7EDC;&#x6D41;&#x91CF;&#x3002;</li>
+<li>&#x670D;&#x52A1;&#x800C;&#x975E;&#x5BF9;&#x8C61;&#x3001;&#x6D88;&#x606F;&#x800C;&#x975E;&#x5F15;&#x7528;&#xFF1A;&#x4FC3;&#x8FDB;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x7CFB;&#x7EDF;&#x95F4;&#x7C97;&#x7C92;&#x5EA6;&#x6D88;&#x606F;&#x4EA4;&#x4E92;&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#x3002; </li>
+<li>&#x8D1F;&#x8F7D;&#x65E0;&#x5173;&#x7684;&#xFF1A;&#x4E0D;&#x540C;&#x7684;&#x670D;&#x52A1;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x548C;&#x7F16;&#x7801;&#xFF0C;&#x4F8B;&#x5982; protocol buffers&#x3001;JSON&#x3001;XML &#x548C; Thrift&#x3002; </li>
+<li>&#x6D41;&#xFF1A;Streaming API&#x3002; </li>
+<li>&#x963B;&#x585E;&#x5F0F;&#x548C;&#x975E;&#x963B;&#x585E;&#x5F0F;&#xFF1A;&#x652F;&#x6301;&#x5F02;&#x6B65;&#x548C;&#x540C;&#x6B65;&#x5904;&#x7406;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x95F4;&#x4EA4;&#x4E92;&#x7684;&#x6D88;&#x606F;&#x5E8F;&#x5217;&#x3002; </li>
+<li>&#x5143;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF1A;&#x5E38;&#x89C1;&#x7684;&#x6A2A;&#x5207;&#x5173;&#x6CE8;&#x70B9;&#xFF0C;&#x5982;&#x8BA4;&#x8BC1;&#x6216;&#x8DDF;&#x8E2A;&#xFF0C;&#x4F9D;&#x8D56;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x3002; </li>
+<li>&#x6807;&#x51C6;&#x5316;&#x72B6;&#x6001;&#x7801;&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x5E38;&#x4EE5;&#x6709;&#x9650;&#x7684;&#x65B9;&#x5F0F;&#x54CD;&#x5E94; API &#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x3002;</li>
+</ul>
+<h2 id="grpc-healthcheck">gRPC-HealthCheck</h2>
+<p>gRPC &#x6709;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x5065;&#x5EB7;&#x68C0;&#x6D4B;&#x534F;&#x8BAE;&#xFF0C;&#x5728; gRPC &#x7684;&#x6240;&#x6709;&#x8BED;&#x8A00;&#x5B9E;&#x73B0;&#x4E2D;&#x57FA;&#x672C;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x548C;&#x7528;&#x4E8E;&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x7684;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x4E3B;&#x52A8;&#x5065;&#x5EB7;&#x68C0;&#x67E5; health check&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x670D;&#x52A1;&#x4E0D;&#x7A33;&#x5B9A;&#x65F6;&#xFF0C;&#x88AB;&#x6D88;&#x8D39;&#x8005;&#x6240;&#x611F;&#x77E5;&#xFF0C;&#x4E34;&#x65F6;&#x4ECE;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x4E2D;&#x6458;&#x9664;&#xFF0C;&#x51CF;&#x5C11;&#x9519;&#x8BEF;&#x8BF7;&#x6C42;&#x3002;&#x5F53;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x91CD;&#x65B0;&#x7A33;&#x5B9A;&#x540E;&#xFF0C;health check &#x6210;&#x529F;&#xFF0C;&#x91CD;&#x65B0;&#x52A0;&#x5165;&#x5230;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF0C;&#x6062;&#x590D;&#x8BF7;&#x6C42;&#x3002;health check&#xFF0C;&#x540C;&#x6837;&#x4E5F;&#x88AB;&#x7528;&#x4E8E;&#x5916;&#x6302;&#x65B9;&#x5F0F;&#x7684;&#x5BB9;&#x5668;&#x5065;&#x5EB7;&#x68C0;&#x6D4B;&#xFF0C;&#x6216;&#x8005;&#x6D41;&#x91CF;&#x68C0;&#x6D4B;(k8s liveness &amp; readiness)&#x3002;</p>
+<h2 id="&#x670D;&#x52A1;&#x53D1;&#x73B0;-&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x73B0;">&#x670D;&#x52A1;&#x53D1;&#x73B0;-&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x73B0;</h2>
+<p>&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x88AB;&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x4F1A;&#x88AB;&#x5199;&#x5230;&#x6CE8;&#x518C;&#x8868;&#x4E0A;&#xFF0C;&#x5F53;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7EC8;&#x6B62;&#x65F6;&#xFF0C;&#x518D;&#x4ECE;&#x6CE8;&#x518C;&#x8868;&#x4E2D;&#x5220;&#x9664;&#x3002;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x7684;&#x6CE8;&#x518C;&#x8868;&#x901A;&#x8FC7;&#x5FC3;&#x8DF3;&#x673A;&#x5236;&#x52A8;&#x6001;&#x5237;&#x65B0;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7B97;&#x6CD5;&#xFF0C;&#x53BB;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x53EF;&#x7528;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#xFF0C;&#x6765;&#x54CD;&#x5E94;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x3002;</p>
+<h2 id="&#x670D;&#x52A1;&#x53D1;&#x73B0;-&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x73B0;">&#x670D;&#x52A1;&#x53D1;&#x73B0;-&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x73B0;</h2>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x901A;&#x8FC7;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x5411;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD9;&#x4E2A;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5668;&#x4F1A;&#x67E5;&#x8BE2;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x8868;&#xFF0C;&#x5E76;&#x5C06;&#x8BF7;&#x6C42;&#x8DEF;&#x7531;&#x5230;&#x53EF;&#x7528;&#x7684;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x4E0A;&#x3002;&#x670D;&#x52A1;&#x5B9E;&#x4F8B;&#x5728;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x8868;&#x4E0A;&#x88AB;&#x6CE8;&#x518C;&#x548C;&#x6CE8;&#x9500;(Consul Template+Nginx&#xFF0C;Kubernetes+etcd)&#x3002;</p>
+<h2 id="&#x670D;&#x52A1;&#x53D1;&#x73B0;">&#x670D;&#x52A1;&#x53D1;&#x73B0;</h2>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x73B0;&#xFF1A; &#x76F4;&#x8FDE;&#xFF0C;&#x6BD4;&#x670D;&#x52A1;&#x7AEF;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x5C11;&#x4E00;&#x6B21;&#x7F51;&#x7EDC;&#x8DF3;&#x8F6C;&#xFF0C;Consumer &#x9700;&#x8981;&#x5185;&#x7F6E;&#x7279;&#x5B9A;&#x7684;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x53D1;&#x73B0;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x53D1;&#x73B0;&#xFF1A; Consumer &#x65E0;&#x9700;&#x5173;&#x6CE8;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x5177;&#x4F53;&#x7EC6;&#x8282;&#xFF0C;&#x53EA;&#x9700;&#x77E5;&#x9053;&#x670D;&#x52A1;&#x7684; DNS &#x57DF;&#x540D;&#x5373;&#x53EF;&#xFF0C;&#x652F;&#x6301;&#x5F02;&#x6784;&#x8BED;&#x8A00;&#x5F00;&#x53D1;&#xFF0C;&#x9700;&#x8981;&#x57FA;&#x7840;&#x8BBE;&#x65BD;&#x652F;&#x6491;&#xFF0C;&#x591A;&#x4E86;&#x4E00;&#x6B21;&#x7F51;&#x7EDC;&#x8DF3;&#x8F6C;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x6027;&#x80FD;&#x635F;&#x5931;&#x3002; </p>
+<p>&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x6838;&#x5FC3;&#x662F;&#x53BB;&#x4E2D;&#x5FC3;&#x5316;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x73B0;&#x6A21;&#x5F0F;&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x573A;&#x666F;&#x662F;&#x6D77;&#x91CF;&#x670D;&#x52A1;&#x53D1;&#x73B0;&#x548C;&#x6CE8;&#x518C;&#xFF0C;&#x670D;&#x52A1;&#x72B6;&#x6001;&#x53EF;&#x4EE5;&#x5F31;&#x4E00;&#x81F4;, &#x9700;&#x8981;&#x7684;&#x662F; AP &#x7CFB;&#x7EDF;&#x3002;</p>
+<ul>
+<li>&#x5206;&#x5E03;&#x5F0F;&#x534F;&#x8C03;&#x670D;&#x52A1;&#xFF08;&#x8981;&#x6C42;&#x4EFB;&#x4F55;&#x65F6;&#x523B;&#x5BF9; ZooKeeper &#x7684;&#x8BBF;&#x95EE;&#x8BF7;&#x6C42;&#x80FD;&#x5F97;&#x5230;&#x4E00;&#x81F4;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4ECE;&#x800C;&#x727A;&#x7272;&#x53EF;&#x7528;&#x6027;&#xFF09;&#x3002; </li>
+<li>&#x7F51;&#x7EDC;&#x6296;&#x52A8;&#x6216;&#x7F51;&#x7EDC;&#x5206;&#x533A;&#x4F1A;&#x5BFC;&#x81F4;&#x7684; master &#x8282;&#x70B9;&#x56E0;&#x4E3A;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x5931;&#x53BB;&#x8054;&#x7CFB;&#x800C;&#x91CD;&#x65B0;&#x9009;&#x4E3E;&#x6216;&#x8D85;&#x8FC7;&#x534A;&#x6570;&#x4E0D;&#x53EF;&#x7528;&#x5BFC;&#x81F4;&#x670D;&#x52A1;&#x6CE8;&#x518C;&#x53D1;&#x73B0;&#x762B;&#x75EA;&#x3002; </li>
+<li>&#x5927;&#x91CF;&#x670D;&#x52A1;&#x957F;&#x8FDE;&#x63A5;&#x5BFC;&#x81F4;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x3002;</li>
+</ul>
+<p>AP &#x53D1;&#x73B0;&#x670D;&#x52A1;&#xFF0C;&#x8BD5;&#x60F3;&#x4E24;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x727A;&#x7272;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x6700;&#x7EC8;&#x4E00;&#x81F4;&#x6027;&#x7684;&#x60C5;&#x51B5;&#xFF1A; </p>
+<ul>
+<li>&#x6CE8;&#x518C;&#x7684;&#x4E8B;&#x4EF6;&#x5EF6;&#x8FDF; </li>
+<li>&#x6CE8;&#x9500;&#x7684;&#x4E8B;&#x4EF6;&#x5EF6;&#x8FDF;</li>
+</ul>
+<p><img src="../images/Snipaste_2023-12-15_11-57-38.png" alt=""></p>
+<ul>
+<li>&#x901A;&#x8FC7; Family(appid) &#x548C; Addr(IP:Port) &#x5B9A;&#x4F4D;&#x5B9E;&#x4F8B;&#xFF0C;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#x8FD8;&#x53EF;&#x4EE5;&#x9644;&#x52A0;&#x66F4;&#x591A;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF1A;&#x6743;&#x91CD;&#x3001;&#x67D3;&#x8272;&#x6807;&#x7B7E;&#x3001;&#x96C6;&#x7FA4;&#x7B49;&#x3002;    appid: &#x4F7F;&#x7528;&#x4E09;&#x6BB5;&#x5F0F;&#x547D;&#x540D;&#xFF0C;business.service.xxx </li>
+<li>Provider  &#x6CE8;&#x518C;&#x540E;&#x5B9A;&#x671F;&#xFF08;30s&#xFF09;&#x5FC3;&#x8DF3;&#x4E00;&#x6B21;&#xFF0C;&#x6CE8;&#x518C;&#xFF0C; &#x5FC3;&#x8DF3;&#xFF0C;&#x4E0B;&#x7EBF;&#x90FD;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x540C;&#x6B65;&#xFF0C;&#x6CE8;&#x518C;&#x548C;&#x4E0B;&#x7EBF;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x957F;&#x8F6E;&#x8BE2;&#x63A8;&#x9001;&#x3002;    &#x65B0;&#x542F;&#x52A8;&#x8282;&#x70B9;&#xFF0C;&#x9700;&#x8981; load cache&#xFF0C;JVM &#x9884;&#x70ED;&#x3002;    &#x6545;&#x969C;&#x65F6;&#xFF0C;Provider &#x4E0D;&#x5EFA;&#x8BAE;&#x91CD;&#x542F;&#x548C;&#x53D1;&#x5E03;&#x3002; </li>
+<li>Consumer &#x542F;&#x52A8;&#x65F6;&#x62C9;&#x53D6;&#x5B9E;&#x4F8B;&#xFF0C;&#x53D1;&#x8D77; 30s &#x957F;&#x8F6E;&#x8BE2;&#x3002;    &#x6545;&#x969C;&#x65F6;&#xFF0C;&#x9700;&#x8981; client &#x4FA7; cache &#x8282;&#x70B9;&#x4FE1;&#x606F;&#x3002;</li>
+<li>Server &#x5B9A;&#x671F;&#xFF08;60s&#xFF09;&#x68C0;&#x6D4B;&#x5931;&#x6548;&#xFF08;90s&#xFF09;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x5931;&#x6548;&#x5219;&#x5254;&#x9664;&#x3002;&#x77ED;&#x65F6;&#x95F4;&#x91CC;&#x4E22;&#x5931;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5FC3;&#x8DF3;&#x8FDE;&#x63A5;&#xFF08;15&#x5206;&#x949F;&#x5185;&#x5FC3;&#x8DF3;&#x4F4E;&#x4E8E;&#x671F;&#x671B;&#x503C;*85%&#xFF09;&#xFF0C;&#x5F00;&#x542F;&#x81EA;&#x6211;&#x4FDD;&#x62A4;&#xFF0C;&#x4FDD;&#x7559;&#x8FC7;&#x671F;&#x670D;&#x52A1;&#x4E0D;&#x5220;&#x9664;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter2.2.html" class="navigation navigation-prev " aria-label="Previous page: 2.2微服务设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter2.4.html" class="navigation navigation-next " aria-label="Next page: 2.4多集群 & 多租户">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.3gRPC & 服务发现","level":"2.1.3","depth":2,"next":{"title":"2.4多集群 & 多租户","level":"2.1.4","depth":2,"path":"Chapter2/Chapter2.4.md","ref":"Chapter2/Chapter2.4.md","articles":[]},"previous":{"title":"2.2微服务设计","level":"2.1.2","depth":2,"path":"Chapter2/Chapter2.2.md","ref":"Chapter2/Chapter2.2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/Chapter2.3.md","mtime":"2024-03-21T02:28:04.928Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-03-21T02:29:15.590Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
