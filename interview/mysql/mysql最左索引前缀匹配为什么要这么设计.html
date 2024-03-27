@@ -1,0 +1,436 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>mysql最左索引前缀匹配为什么要这么设计 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="主键索引和唯一索引的区别.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    cloud
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../cloud/rpc/rpc框架是短连接还是长连接.html">
+            
+                <a href="../cloud/rpc/rpc框架是短连接还是长连接.html">
+            
+                    
+                    rpc框架是短连接还是长连接
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../java/动态代理的类和原始类的关系.html">
+            
+                <a href="../java/动态代理的类和原始类的关系.html">
+            
+                    
+                    动态代理的类和原始类的关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    mysql
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="去重时distinct和group的区别.html">
+            
+                <a href="去重时distinct和group的区别.html">
+            
+                    
+                    去重时distinct和group的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="主键索引和唯一索引的区别.html">
+            
+                <a href="主键索引和唯一索引的区别.html">
+            
+                    
+                    主键索引和唯一索引的区别
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.3" data-path="mysql最左索引前缀匹配为什么要这么设计.html">
+            
+                <a href="mysql最左索引前缀匹配为什么要这么设计.html">
+            
+                    
+                    mysql最左索引前缀匹配为什么要这么设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    mybatis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../mybatis/mapper接口和xml底层的转换原理.html">
+            
+                <a href="../mybatis/mapper接口和xml底层的转换原理.html">
+            
+                    
+                    mapper接口和xml底层的转换原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    redis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../redis/redis基本数据类型及底层数据结构.html">
+            
+                <a href="../redis/redis基本数据类型及底层数据结构.html">
+            
+                    
+                    redis基本数据类型及底层数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >mysql最左索引前缀匹配为什么要这么设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mysql&#x6700;&#x5DE6;&#x7D22;&#x5F15;&#x524D;&#x7F00;&#x5339;&#x914D;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;">mysql&#x6700;&#x5DE6;&#x7D22;&#x5F15;&#x524D;&#x7F00;&#x5339;&#x914D;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x8FD9;&#x4E48;&#x8BBE;&#x8BA1;</h1>
+<p>MySQL&#x4E2D;&#x7684;&#x6700;&#x5DE6;&#x524D;&#x7F00;&#x5339;&#x914D;&#x539F;&#x5219;&#x662F;&#x57FA;&#x4E8E;B+&#x6811;&#x7D22;&#x5F15;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x548C;&#x8BBE;&#x8BA1;&#x8003;&#x8651;&#x800C;&#x6765;&#x7684;&#x3002;</p>
+<h2 id="&#x4E00;&#x3001;b&#x6811;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x548C;&#x7279;&#x70B9;">&#x4E00;&#x3001;B+&#x6811;&#x7D22;&#x5F15;&#x7684;&#x57FA;&#x672C;&#x7ED3;&#x6784;&#x548C;&#x7279;&#x70B9;</h2>
+<p>MySQL&#x7684;InnoDB&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x4F7F;&#x7528;B+&#x6811;&#x4F5C;&#x4E3A;&#x7D22;&#x5F15;&#x7ED3;&#x6784;&#x3002;<strong>B+&#x6811;&#x662F;&#x4E00;&#x79CD;&#x5E73;&#x8861;&#x7684;&#x591A;&#x8DEF;&#x641C;&#x7D22;&#x6811;</strong>&#xFF0C;&#x5176;&#x7279;&#x70B9;&#x662F;<strong>&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF08;leaf node&#xFF09;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x94FE;&#x63A5;&#x5F62;&#x6210;&#x6709;&#x5E8F;&#x94FE;&#x8868;</strong>&#xFF0C;&#x4E14;&#x6240;&#x6709;&#x975E;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x4E0D;&#x5B58;&#x50A8;&#x884C;&#x6570;&#x636E;&#xFF0C;&#x4EC5;&#x5B58;&#x50A8;&#x7D22;&#x5F15;&#x952E;&#x503C;&#xFF0C;&#x800C;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x5B58;&#x50A8;&#x4E86;&#x5B8C;&#x6574;&#x7684;&#x884C;&#x6570;&#x636E;&#x6216;&#x6307;&#x5411;&#x884C;&#x6570;&#x636E;&#x7684;&#x6307;&#x9488;&#x3002;&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;&#x4F7F;&#x5F97;&#x67E5;&#x8BE2;&#x6548;&#x7387;&#x76F8;&#x5BF9;&#x8F83;&#x9AD8;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5728;&#x78C1;&#x76D8;I/O&#x5BC6;&#x96C6;&#x578B;&#x64CD;&#x4F5C;&#x4E2D;&#x3002;</p>
+<h2 id="&#x4E8C;&#x3001;&#x8054;&#x5408;&#x7D22;&#x5F15;">&#x4E8C;&#x3001;&#x8054;&#x5408;&#x7D22;&#x5F15;</h2>
+<p>&#x8054;&#x5408;&#x7D22;&#x5F15;&#x662F;&#x6307;&#x5728;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x4E2D;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x5217;&#xFF0C;&#x4F8B;&#x5982;&#x5BF9;<code>(col1, col2, col3)</code>&#x5EFA;&#x7ACB;&#x8054;&#x5408;&#x7D22;&#x5F15;&#xFF0C;&#x7D22;&#x5F15;&#x662F;&#x6309;&#x7167;&#x6700;&#x5DE6;&#x5217;<code>col1</code>&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x5BF9;&#x4E8E;&#x76F8;&#x540C;&#x7684;<code>col1</code>&#x503C;&#xFF0C;<code>col2</code>&#x5217;&#x518D;&#x6B21;&#x5347;&#x5E8F;&#x6392;&#x5E8F;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;</p>
+<h2 id="&#x4E09;&#x3001;&#x6700;&#x5DE6;&#x5339;&#x914D;&#x539F;&#x5219;">&#x4E09;&#x3001;&#x6700;&#x5DE6;&#x5339;&#x914D;&#x539F;&#x5219;</h2>
+<ul>
+<li><strong>&#x7D22;&#x5F15;&#x5229;&#x7528;&#x7387;</strong>&#xFF1A;&#x7531;&#x4E8E;B+&#x6811;&#x7D22;&#x5F15;&#x662F;&#x6309;&#x7167;&#x7D22;&#x5F15;&#x5217;&#x7684;&#x987A;&#x5E8F;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x7D22;&#x5F15;&#x4E2D;&#x641C;&#x7D22;&#x65F6;&#xFF0C;&#x81EA;&#x7136;&#x53EF;&#x4EE5;&#x4ECE;&#x5DE6;&#x81F3;&#x53F3;&#x4F9D;&#x6B21;&#x5339;&#x914D;&#x3002;&#x53EA;&#x8981;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x7D22;&#x5F15;&#x7684;&#x6700;&#x5DE6;&#x5217;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x7D22;&#x5F15;&#x6765;&#x52A0;&#x901F;&#x67E5;&#x8BE2;&#x3002;&#x800C;&#x4E14;&#xFF0C;&#x5982;&#x679C;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x591A;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x7D22;&#x5F15;&#x5217;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5229;&#x7528;&#x540E;&#x9762;&#x7684;&#x5217;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x6700;&#x5DE6;&#x524D;&#x7F00;&#x5339;&#x914D;&#x3002;</li>
+<li><strong>&#x7D22;&#x5F15;&#x7D27;&#x51D1;&#x6027;</strong>&#xFF1A;&#x5982;&#x679C;&#x5141;&#x8BB8;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x7684;&#x5217;&#x90FD;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x6781;&#x5927;&#x5730;&#x589E;&#x52A0;&#x7D22;&#x5F15;&#x7684;&#x5927;&#x5C0F;&#x548C;&#x67E5;&#x8BE2;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x3002;&#x56E0;&#x4E3A;&#x6BCF;&#x5217;&#x7684;&#x7EC4;&#x5408;&#x90FD;&#x9700;&#x8981;&#x72EC;&#x7ACB;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E8E;&#x5927;&#x578B;&#x6570;&#x636E;&#x8868;&#x6765;&#x8BF4;&#xFF0C;&#x7D22;&#x5F15;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x548C;&#x7EF4;&#x62A4;&#x6210;&#x672C;&#x90FD;&#x4F1A;&#x5F88;&#x9AD8;&#x3002;</li>
+<li><strong>&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x540E;&#x7684;&#x5217;&#x4E0D;&#x53EF;&#x7528;</strong>&#xFF1A;
+&#x5F53;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x4E2D;&#x51FA;&#x73B0;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#xFF08;&#x5982;<code>col1 &gt; value</code>&#xFF09;&#x6216;&#x8005;&#x4F7F;&#x7528;<code>LIKE &apos;value%&apos;</code>&#x8FD9;&#x6837;&#x7684;&#x524D;&#x7F00;&#x5339;&#x914D;&#x65F6;&#xFF0C;<strong>B+&#x6811;&#x7D22;&#x5F15;&#x540E;&#x7EED;&#x7684;&#x5217;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x6709;&#x6548;&#x7684;&#x6392;&#x5E8F;&#x548C;&#x8FC7;&#x6EE4;&#xFF0C;&#x56E0;&#x4E3A;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x7834;&#x574F;&#x4E86;&#x7D22;&#x5F15;&#x7684;&#x6709;&#x5E8F;&#x6027;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x53F3;&#x4FA7;&#x7684;&#x5217;&#x65E0;&#x6CD5;&#x5229;&#x7528;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x68C0;&#x7D22;&#x3002;</strong></li>
+</ul>
+<h2 id="&#x56DB;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x7834;&#x574F;b&#x6811;&#x7D22;&#x5F15;&#x540E;&#x7EED;&#x7684;&#x5217;">&#x56DB;&#x3001;&#x4E3A;&#x4EC0;&#x4E48;&#x4F1A;&#x7834;&#x574F;B+&#x6811;&#x7D22;&#x5F15;&#x540E;&#x7EED;&#x7684;&#x5217;</h2>
+<p>&#x5F53;&#x5728;B+&#x6811;&#x7D22;&#x5F15;&#x4E2D;&#x6267;&#x884C;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x65F6;&#xFF0C;&#x4F8B;&#x5982;&#x9488;&#x5BF9;&#x4E00;&#x4E2A;&#x8054;&#x5408;&#x7D22;&#x5F15; <code>(col1, col2, col3)</code> &#x6267;&#x884C;&#x5982;&#x4E0B;&#x67E5;&#x8BE2;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">WHERE</span> col1 = <span class="hljs-string">&apos;value1&apos;</span> <span class="hljs-keyword">AND</span> col2 &gt; <span class="hljs-string">&apos;value2&apos;</span>;
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x5BF9; <code>col2</code> &#x4F7F;&#x7528;&#x4E86;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x6761;&#x4EF6; <code>col2 &gt; &apos;value2&apos;</code>&#x3002;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;MySQL &#x53EA;&#x80FD;&#x5229;&#x7528;&#x7D22;&#x5F15;&#x5BF9; <code>col1</code> &#x7684;&#x503C;&#x8FDB;&#x884C;&#x7CBE;&#x786E;&#x5339;&#x914D;&#xFF0C;&#x63A5;&#x7740;&#x5BF9; <code>col2</code> &#x8FDB;&#x884C;&#x8303;&#x56F4;&#x67E5;&#x627E;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x4E00;&#x65E6;&#x8FDB;&#x884C;&#x4E86;&#x8303;&#x56F4;&#x67E5;&#x627E;&#xFF0C;B+&#x6811;&#x7D22;&#x5F15;&#x7684;&#x6709;&#x5E8F;&#x6027;&#x5C31;&#x88AB;&#x7834;&#x574F;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x8303;&#x56F4;&#x5185;&#x7684; <code>col2</code> &#x503C;&#x4E0D;&#x518D;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#xFF0C;&#x65E0;&#x6CD5;&#x50CF;&#x4E4B;&#x524D;&#x90A3;&#x6837;&#x6CBF;&#x7740;&#x7D22;&#x5F15;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x9AD8;&#x6548;&#x7684;&#x67E5;&#x627E;&#x3002;</p>
+<p>B+&#x6811;&#x7684;&#x7279;&#x6027;&#x662F;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x8FDE;&#x63A5;&#xFF0C;&#x5BF9;&#x4E8E;&#x67D0;&#x4E00;&#x5217;&#x7684;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#xFF0C;&#x53EF;&#x4EE5;&#x5F88;&#x5FEB;&#x5B9A;&#x4F4D;&#x5230;&#x8303;&#x56F4;&#x8D77;&#x70B9;&#x5E76;&#x6CBF;&#x94FE;&#x8868;&#x5411;&#x4E0B;&#x904D;&#x5386;&#x76F4;&#x5230;&#x8303;&#x56F4;&#x7EC8;&#x70B9;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;&#x8FD8;&#x8981;&#x57FA;&#x4E8E; <code>col3</code> &#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x7B5B;&#x9009;&#xFF0C;&#x7531;&#x4E8E;&#x94FE;&#x8868;&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x4E0D;&#x518D;&#x6309;&#x7167; <code>col3</code> &#x6392;&#x5E8F;&#xFF0C;&#x6240;&#x4EE5;&#x6570;&#x636E;&#x5E93;&#x65E0;&#x6CD5;&#x7EE7;&#x7EED;&#x5229;&#x7528;&#x7D22;&#x5F15;&#x6765;&#x5FEB;&#x901F;&#x627E;&#x5230;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684; <code>col3</code> &#x503C;&#xFF0C;&#x53EA;&#x80FD;&#x5BF9;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x56DE;&#x8868;&#xFF08;&#x56DE;&#x5230;&#x4E3B;&#x952E;&#x7D22;&#x5F15;&#x6216;&#x805A;&#x7C07;&#x7D22;&#x5F15;&#xFF09;&#xFF0C;&#x9010;&#x4E00;&#x68C0;&#x67E5;&#x6BCF;&#x884C;&#x8BB0;&#x5F55;&#x7684; <code>col3</code> &#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6267;&#x884C; <code>col1 = &apos;A&apos; AND col2 &gt; &apos;B3&apos;</code> &#x7684;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x80FD;&#x5FEB;&#x901F;&#x5B9A;&#x4F4D;&#x5230; <code>&apos;B3&apos;</code> &#x4E4B;&#x540E;&#x7684;&#x8BB0;&#x5F55;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x8981;&#x6839;&#x636E; <code>col3</code> &#x67E5;&#x627E;&#xFF0C;&#x5982; <code>col3 = &apos;C5&apos;</code>&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x9010;&#x884C;&#x68C0;&#x67E5;&#xFF0C;&#x56E0;&#x4E3A;&#x7D22;&#x5F15;&#x5E76;&#x6CA1;&#x6709;&#x544A;&#x8BC9;&#x6211;&#x4EEC; <code>&apos;B3&apos;</code> &#x4E4B;&#x540E;&#x54EA;&#x4E9B;&#x884C;&#x7684; <code>col3</code> &#x503C;&#x662F; <code>&apos;C5&apos;</code>&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x8303;&#x56F4;&#x67E5;&#x8BE2;&#x4F1A;&#x7834;&#x574F;B+&#x6811;&#x7D22;&#x5F15;&#x540E;&#x7EED;&#x5217;&#x7684;&#x6709;&#x5E8F;&#x6027;&#xFF0C;&#x4F7F;&#x5176;&#x65E0;&#x6CD5;&#x7EE7;&#x7EED;&#x53C2;&#x4E0E;&#x9AD8;&#x6548;&#x7D22;&#x5F15;&#x67E5;&#x627E;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="主键索引和唯一索引的区别.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 主键索引和唯一索引的区别">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"mysql最左索引前缀匹配为什么要这么设计","level":"2.2.3","depth":2,"next":{"title":"mybatis","level":"2.3","depth":1,"ref":"","articles":[{"title":"mapper接口和xml底层的转换原理","level":"2.3.1","depth":2,"path":"mybatis/mapper接口和xml底层的转换原理.md","ref":"mybatis/mapper接口和xml底层的转换原理.md","articles":[]}]},"previous":{"title":"主键索引和唯一索引的区别","level":"2.2.2","depth":2,"path":"mysql/主键索引和唯一索引的区别.md","ref":"mysql/主键索引和唯一索引的区别.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"mysql/mysql最左索引前缀匹配为什么要这么设计.md","mtime":"2024-03-27T04:09:31.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-03-27T04:26:45.368Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
