@@ -16,3 +16,4 @@
 - redis
 
   - [redis基本数据类型及底层数据结构](redis/redis基本数据类型及底层数据结构.md)
+  - [RDB和AOF](redis/RDB和AOF.md)
