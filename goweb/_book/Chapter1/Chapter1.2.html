@@ -1,0 +1,500 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>1.2type定义和server抽象 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Chapter1.3.html" />
+    
+    
+    <link rel="prev" href="Chapter1.1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第一章 基础
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Chapter1.1.html">
+            
+                <a href="Chapter1.1.html">
+            
+                    
+                    1.1基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="Chapter1.2.html">
+            
+                <a href="Chapter1.2.html">
+            
+                    
+                    1.2type定义和server抽象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Chapter1.3.html">
+            
+                <a href="Chapter1.3.html">
+            
+                    
+                    1.3错误处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    第二章 微服务
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Chapter2/Chapter2.1.html">
+            
+                <a href="../Chapter2/Chapter2.1.html">
+            
+                    
+                    2.1微服务概览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Chapter2/Chapter2.2.html">
+            
+                <a href="../Chapter2/Chapter2.2.html">
+            
+                    
+                    2.2微服务设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Chapter2/Chapter2.3.html">
+            
+                <a href="../Chapter2/Chapter2.3.html">
+            
+                    
+                    2.3gRPC & 服务发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../Chapter2/Chapter2.4.html">
+            
+                <a href="../Chapter2/Chapter2.4.html">
+            
+                    
+                    2.4多集群 & 多租户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >1.2type定义和server抽象</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="type&#x5B9A;&#x4E49;&#x548C;server&#x62BD;&#x8C61;">type&#x5B9A;&#x4E49;&#x548C;server&#x62BD;&#x8C61;</h1>
+<h2 id="request-body">Request Body</h2>
+<ul>
+<li><p>Body: &#x53EA;&#x80FD;&#x8BFB;&#x53D6;&#x4E00;&#x6B21;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x4F60;&#x8BFB;&#x4E86;&#x522B;&#x4EBA;&#x5C31;&#x4E0D;&#x80FD;&#x8BFB;&#x4E86;&#xFF1B;&#x522B;&#x4EBA;&#x8BFB;&#x4E86;&#x4F60;&#x5C31;&#x4E0D;&#x80FD;&#x8BFB;&#x4E86;</p>
+</li>
+<li><p>GetBody: &#x539F;&#x5219;&#x4E0A;&#x662F;&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x8BFB;&#x53D6;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x539F;&#x751F;&#x7684;http.Request&#x91CC;&#x9762;&#xFF0C;&#x8FD9;&#x4E2A;&#x662F;nil</p>
+</li>
+<li><p>&#x5728;&#x8BFB;&#x53D6;&#x5230;body&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#xFF0C;&#x6BD4;&#x5982;&#x5C06;json&#x683C;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7B49;&#x3002;</p>
+</li>
+<li><p>&#x9664;&#x4E86;Body&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x80FD;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x5730;&#x65B9;&#x662F;Query</p>
+</li>
+<li>&#x6240;&#x6709;&#x7684;&#x503C;&#x90FD;&#x88AB;&#x89E3;&#x91CA;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x89E3;&#x6790;&#x4E3A;&#x6570;&#x5B57;&#x7B49;&#x3002;</li>
+</ul>
+<h2 id="request-url">Request URL</h2>
+<ul>
+<li>URL &#x91CC;&#x9762; Host&#x4E0D;&#x4E00;&#x5B9A;&#x6709;&#x503C;</li>
+<li>r.Host &#x4E00;&#x822C;&#x90FD;&#x6709;&#x503C;&#xFF0C; &#x662F;Host&#x8FD9;&#x4E2A;header&#x7684;&#x503C;&#x3002;</li>
+<li>RawPath &#x4E5F;&#x662F;&#x4E0D;&#x4E00;&#x5B9A;&#x6709;</li>
+<li>Path&#x80AF;&#x5B9A;&#x6709;</li>
+</ul>
+<h2 id="request-header">Request Header</h2>
+<ul>
+<li>header&#x5927;&#x4F53;&#x4E0A;&#x662F;&#x4E24;&#x7C7B;&#xFF0C;&#x4E00;&#x7C7B;&#x662F;http&#x9884;&#x5B9A;&#x4E49;&#x7684;&#xFF1B;&#x4E00;&#x7C7B;&#x662F;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;</li>
+<li>Go &#x4F1A;&#x81EA;&#x52A8;&#x7684;&#x5C06;header&#x540D;&#x5B57;&#x8F6C;&#x4E3A;&#x6807;&#x51C6;&#x540D;&#x5B57;-&#x5927;&#x5C0F;&#x5199;&#x8C03;&#x6574;</li>
+<li>&#x4E00;&#x822C;&#x7528;X&#x5F00;&#x5934;&#x6765;&#x8868;&#x660E;&#x662F;&#x81EA;&#x5DF1;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x6BD4;&#x5982;X-mycompany-your=header </li>
+</ul>
+<h2 id="form">Form</h2>
+<ul>
+<li>Form&#x548C;ParseForm</li>
+<li>&#x8981;&#x5148;&#x8C03;&#x7528; ParseForm</li>
+<li>&#x5EFA;&#x8BAE;&#x52A0;&#x4E0A; Content-Type&#xFF1A;application/x-www-form-urlencoded</li>
+</ul>
+<h2 id="tyoe&#x5B9A;&#x4E49;">tyoe&#x5B9A;&#x4E49;</h2>
+<ul>
+<li>type&#x5B9A;&#x4E49;<ul>
+<li>type &#x540D;&#x5B57; interface {}</li>
+<li>type &#x540D;&#x5B57; struct {}</li>
+<li>type &#x540D;&#x5B57; &#x522B;&#x7684;&#x7C7B;&#x578B;</li>
+<li>type &#x522B;&#x540D; = &#x522B;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
+</li>
+<li>&#x7ED3;&#x6784;&#x4F53;&#x521D;&#x59CB;&#x5316;</li>
+<li>&#x6307;&#x9488;&#x4E0E;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x5668;</li>
+<li>&#x7ED3;&#x6784;&#x4F53;&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;</li>
+</ul>
+<h2 id="interface-&#x5B9A;&#x4E49;">interface &#x5B9A;&#x4E49;</h2>
+<ul>
+<li><p>&#x57FA;&#x672C;&#x8BED;&#x6CD5; type &#x540D;&#x5B57; interface{}</p>
+</li>
+<li><p>&#x91CC;&#x9762;&#x53EA;&#x80FD;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x4E5F;&#x4E0D;&#x9700;&#x8981;func&#x5173;&#x952E;&#x5B57;</p>
+</li>
+<li>&#x5565;&#x662F;&#x63A5;&#x53E3;&#xFF08;interface&#xFF09; : &#x63A5;&#x53E3;&#x662F;&#x4E00;&#x7EC4;&#x884C;&#x4E3A;&#x7684;&#x62BD;&#x8C61;</li>
+<li>&#x5C3D;&#x91CF;&#x7528;&#x63A5;&#x53E3;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;</li>
+</ul>
+<h2 id="struct-&#x5B9A;&#x4E49;">struct &#x5B9A;&#x4E49;</h2>
+<ul>
+<li>&#x57FA;&#x672C;&#x8BED;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> Name <span class="hljs-keyword">struct</span> {
+    fieldName FieldType
+}
+</code></pre>
+<ul>
+<li>&#x7ED3;&#x6784;&#x4F53;&#x548C;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x5B57;&#x6BB5;&#x90FD;&#x9075;&#x5FAA;&#x5927;&#x5C0F;&#x5199;&#x63A7;&#x5236;&#x8BBF;&#x95EE;&#x6027;&#x7684;&#x539F;&#x5219;</li>
+</ul>
+<h2 id="type-a-b">type A B</h2>
+<ul>
+<li>&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF1A; type TypeA TypeB</li>
+<li>&#x6211;&#x4E00;&#x822C;&#xFF0C;&#x5728;&#x6211;&#x662F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x6709;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x4FEE;&#x6539;&#x6E90;&#x7801;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53C8;&#x60F3;&#x5728;&#x62D3;&#x5C55;&#x8FD9;&#x4E2A;&#x5E93;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x4F1A;&#x7528;&#x8FD9;&#x4E2A;</li>
+</ul>
+<h2 id="type-a--b">type A = B</h2>
+<ul>
+<li>&#x57FA;&#x672C;&#x8BED;&#x6CD5;&#xFF1A; type TypeA = TypeB</li>
+<li>&#x522B;&#x540D;&#x9664;&#x4E86;&#x6362;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#xFF0C;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x533A;&#x522B;</li>
+</ul>
+<h2 id="struct-&#x521D;&#x59CB;&#x5316;">Struct &#x521D;&#x59CB;&#x5316;</h2>
+<ul>
+<li>Go&#x6CA1;&#x6709;&#x6784;&#x9020;&#x51FD;&#x6570;</li>
+<li>&#x521D;&#x59CB;&#x5316;&#x8BED;&#x6CD5;&#xFF1A;Struct{}</li>
+<li>&#x83B7;&#x53D6;&#x6307;&#x9488;&#xFF1A; &amp;Struct{}</li>
+<li>&#x83B7;&#x53D6;&#x6307;&#x9488;2&#xFF1A;new(Struct)</li>
+<li>new &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;Go&#x4F1A;&#x4E3A;&#x4F60;&#x7684;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x5185;&#x5B58;&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x5185;&#x5B58;&#x90FD;&#x7F6E;&#x4E3A;0</li>
+</ul>
+<h2 id="&#x6307;&#x9488;">&#x6307;&#x9488;</h2>
+<ul>
+<li>&#x548C;C&#xFF0C; C++ &#x4E00;&#x6837;&#xFF0C; *&#x8868;&#x793A;&#x6307;&#x9488;&#xFF0C;&amp;&#x53D6;&#x5730;&#x5740;</li>
+<li>&#x5982;&#x679C;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x6307;&#x9488;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x8D4B;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x662F;nil</li>
+</ul>
+<h2 id="&#x7ED3;&#x6784;&#x4F53;&#x81EA;&#x5F15;&#x7528;">&#x7ED3;&#x6784;&#x4F53;&#x81EA;&#x5F15;&#x7528;</h2>
+<ul>
+<li>&#x7ED3;&#x6784;&#x4F53;&#x5185;&#x90E8;&#x5F15;&#x7528;&#x81EA;&#x5DF1;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x6307;&#x9488;</li>
+<li>&#x51C6;&#x786E;&#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x6574;&#x4E2A;&#x5F15;&#x7528;&#x94FE;&#x4E0A;&#xFF0C;&#x5982;&#x679C;&#x6784;&#x6210;&#x5FAA;&#x73AF;&#xFF0C;&#x90A3;&#x5C31;&#x53EA;&#x80FD;&#x7528;&#x6307;&#x9488;&#x3002;</li>
+</ul>
+<h2 id="&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x5668;">&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x5668;</h2>
+<ul>
+<li>&#x7ED3;&#x6784;&#x4F53;&#x63A5;&#x6536;&#x5668;&#x5185;&#x90E8;&#x6C38;&#x8FDC;&#x4E0D;&#x8981;&#x4FEE;&#x6539;&#x5B57;&#x6BB5;</li>
+</ul>
+<h2 id="&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x5668;&#x7528;&#x54EA;&#x4E2A;">&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x5668;&#x7528;&#x54EA;&#x4E2A;</h2>
+<ul>
+<li>&#x8BBE;&#x8BA1;&#x4E0D;&#x53EF;&#x53D8;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x7ED3;&#x6784;&#x4F53;&#x63A5;&#x6536;&#x5668;</li>
+<li>&#x5176;&#x4ED6;&#x7528;&#x6307;&#x9488;</li>
+</ul>
+<h2 id="&#x6CE8;&#x91CA;&#x89C4;&#x8303;">&#x6CE8;&#x91CA;&#x89C4;&#x8303;</h2>
+<pre><code class="lang-go"><span class="hljs-comment">// Fun1 &#x6D4B;&#x8BD5;</span>
+<span class="hljs-keyword">func</span> Fun1(a <span class="hljs-keyword">string</span>, b <span class="hljs-keyword">int</span>) (<span class="hljs-keyword">int</span>, <span class="hljs-keyword">string</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>, <span class="hljs-string">&quot;&#x60A8;&#x597D;&quot;</span>
+}
+</code></pre>
+<h2 id="type&#x603B;&#x7ED3;">type&#x603B;&#x7ED3;</h2>
+<ul>
+<li>type&#x5B9A;&#x4E49;&#x719F;&#x8BB0;&#x3002;&#x5176;&#x4E2D;type A = B&#x8FD9;&#x79CD;&#x522B;&#x540D;&#xFF0C;&#x4E00;&#x822C;&#x53EA;&#x7528;&#x4E8E;&#x517C;&#x5BB9;&#x6027;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x8FC7;&#x591A;&#x5173;&#x6CE8;&#x3002;<ul>
+<li>&#x5148;&#x6709;&#x62BD;&#x8C61;&#x518D;&#x6709;&#x5B9E;&#x73B0;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5148;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;</li>
+</ul>
+</li>
+<li>&#x9E2D;&#x5B50;&#x7C7B;&#x578B;&#xFF1A;&#x4E00;&#x4E2A;&#x7ED3;&#x6784;&#x4F53;&#x6709;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x5B83;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;</li>
+<li>&#x6307;&#x9488;&#xFF1A;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x5668;&#xFF0C;&#x9047;&#x4E8B;&#x4E0D;&#x51B3;&#x7528;&#x6307;&#x9488;&#xFF1B;</li>
+</ul>
+<h2 id="server-&#x548C;-context">Server &#x548C; Context</h2>
+<ul>
+<li>Http Server &#x5B9E;&#x73B0;</li>
+<li>Context&#x62BD;&#x8C61;&#x4E0E;&#x5B9E;&#x73B0;<ul>
+<li>&#x8BFB;&#x53D6;&#x6570;&#x636E;</li>
+<li>&#x5199;&#x5165;&#x54CD;&#x5E94;</li>
+</ul>
+</li>
+<li>&#x521B;&#x5EFA;Context</li>
+</ul>
+<h2 id="map">map</h2>
+<ul>
+<li>&#x57FA;&#x672C;&#x5F62;&#x5F0F;map[KeyType]valueType</li>
+<li>&#x521B;&#x5EFA;make&#x547D;&#x4EE4;&#xFF0C; &#x6216;&#x8005;&#x76F4;&#x63A5;&#x521D;&#x59CB;&#x5316;</li>
+<li>&#x53D6;&#x503C;&#xFF1A; val, ok := m[key]</li>
+<li>&#x8BBE;&#x503C;&#xFF1A; m[key]= val</li>
+<li>key&#x7C7B;&#x578B;&#xFF1A; &#x201D;&#x53EF;&#x6BD4;&#x8F83;&#x201C;&#x7C7B;&#x578B;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter1.1.html" class="navigation navigation-prev " aria-label="Previous page: 1.1基础语法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Chapter1.3.html" class="navigation navigation-next " aria-label="Next page: 1.3错误处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"1.2type定义和server抽象","level":"1.2.2","depth":2,"next":{"title":"1.3错误处理","level":"1.2.3","depth":2,"path":"Chapter1/Chapter1.3.md","ref":"Chapter1/Chapter1.3.md","articles":[]},"previous":{"title":"1.1基础语法","level":"1.2.1","depth":2,"path":"Chapter1/Chapter1.1.md","ref":"Chapter1/Chapter1.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/Chapter1.2.md","mtime":"2024-12-27T15:38:25.612Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-27T16:09:47.433Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
